@@ -7,4 +7,6 @@ Author: **Shinichi Nagata** — Independent Researcher, Kanagawa, Japan
 Contact: **siriusa.paper@gmail.com**
 SSOT: GitHub (decision-os-paper). This PDF keeps only constants & skeleton; canonical text is the repo.
 
+Evidence (2025-11-04, Chigasaki JP Post): [/evidence/2025-11-04](./evidence/2025-11-04) — commit: 991d81e2a7531ae6ab565ce2ced77ed2605fda6f
+
 # decision-os-paper
