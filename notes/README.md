@@ -2,6 +2,8 @@
 
 This folder collects the public-facing PDFs linked to Zenodo and arXiv.
 
+- **Decision-OS V4 Polaris-Origin** — Entry OS for seeing structure with AI (Polaris, direction / question design).
+
 ## Decision-OS V6 (PIC)
 
 - **V6 Research Note (1 page)**  
