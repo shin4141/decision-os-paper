@@ -24,3 +24,9 @@ This folder collects the public-facing PDFs linked to Zenodo and arXiv.
   `Decision-OS_V7_Aspire_Intelligence.pdf`  
   English research-note edition of the V7 lineage.
 
+  ## Decision-OS V7 (Core)
+
+- PDF (EN Core): `notes/Decision_OS_V7__Aspire_Intelligence_for_AGI__EN_Core.pdf`
+- SSOT (GitHub commit): 9a184a5726c619348822d159a544879030de3fde
+
+
