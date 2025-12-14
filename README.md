@@ -6,11 +6,6 @@ DOI: 10.5281/zenodo.17480645 ｜ SSOT: 840c85de344f5dd197dc5122ad9f4ba452f2970d
 Author: **Shinichi Nagata** — Independent Researcher, Kanagawa, Japan  
 Contact: **siriusa.paper@gmail.com**
 
-## Decision-OS V7 (Core)
-
-- PDF (EN Core): `notes/Decision_OS_V7__Aspire_Intelligence_for_AGI__EN_Core.pdf`
-- SSOT (GitHub commit): 9a184a5726c619348822d159a544879030de3fde
-
 SSOT: GitHub (decision-os-paper). This PDF keeps only constants & skeleton; canonical text is the repo.
 
 **Evidence (2025-11-04, Chigasaki JP Post):** [evidence/2025-11-04](https://github.com/shin4141/decision-os-paper/tree/main/evidence/2025-11-04) — commit [`991d81e2a7`](https://github.com/shin4141/decision-os-paper/commit/991d81e2a7531ae6ab565ce2ced77ed2605fda6f)
