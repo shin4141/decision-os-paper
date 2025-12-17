@@ -29,4 +29,4 @@ This folder collects the public-facing PDFs linked to Zenodo and arXiv.
 - PDF (EN Core): `notes/Decision_OS_V7__Aspire_Intelligence_for_AGI__EN_Core.pdf`
 - SSOT (GitHub commit): 9a184a5726c619348822d159a544879030de3fde
 
-
+V8 Research Note (JP): Control-centered view of AGI evolution — Time-Tube / Dependency Gradient / Guardian Redefinition.
