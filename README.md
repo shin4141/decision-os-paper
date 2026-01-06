@@ -17,6 +17,11 @@ Canonical artifacts are hosted on Zenodo (DOI); GitHub is used for indexing and 
   Zenodo (concept DOI / all versions): 10.5281/zenodo.17970577  
   SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
 
+  Notes (Zenodo)
+Time-is-an-Ally (1P Note) — As-of Preserving Re-evaluation Coefficient (Genesis×Time)
+Zenodo: https://doi.org/10.5281/zenodo.18158755
+Source (GitHub): notes/time-is-an-ally/Decision_OS_Note_Time_is_an_Ally_1P.pdf
+
 ## How to read (60 seconds)
 If a model is fluent, do not trust the summary. Start from claims:
 Claims → Assumptions → Dependencies → CheckType → Falsifier → then summarize.
