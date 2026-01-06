@@ -26,11 +26,11 @@ Let:
 - t_re-eval: re-evaluation timestamp
 - k: calibration constant (to be estimated)
 
-\[
+$$
 A_{total}(t) =
 (Talent \times Market \times Influence)\times G_{index}\times
 \left[1 + k\cdot \log\left(\frac{t_{\text{re-eval}}}{t_{\text{as-of}}}\right)\right]
-\]
+$$
 
 ## Notes (to avoid overclaim)
 - This form does **not** claim that “time guarantees correctness.”
