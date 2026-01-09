@@ -28,6 +28,7 @@ Claims → Assumptions → Dependencies → CheckType → Falsifier → then sum
 
 ## Links
 - X: https://x.com/DecisionOS
+- - Transparency (Author’s Note): [AUTHORS_NOTE.md](./AUTHORS_NOTE.md)
   
 正典=ProjectFiles(v2025-11-03) / DOI:10.5281/zenodo.17511725 / SHA256=0941d922...
 
