@@ -8,6 +8,7 @@ Canonical artifacts are hosted on **Zenodo (DOI)**; GitHub is used for **indexin
 ## Start here (Gateway)
 
 Decision-OS has **two entry paths**. Pick the one that matches your interest:
+Citation: please cite the Zenodo DOI of the relevant version (V5 or V8 v2).
 
 ### A) Practical Safety / Implementation (Real-world)
 **Start with V5** — ZK-backed approval, two-step confirmation, revoke window (Δt), duress-aware control.  
