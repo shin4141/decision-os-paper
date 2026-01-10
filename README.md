@@ -12,14 +12,14 @@ Decision-OS has **two entry paths**. Pick the one that matches your interest:
 ### A) Practical Safety / Implementation (Real-world)
 **Start with V5** — ZK-backed approval, two-step confirmation, revoke window (Δt), duress-aware control.  
 - V5 — SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life  
-  Zenodo: https://zenodo.org/records/18051625
+  https://zenodo.org/records/18051625
 
 **Then**: V6 → V8 (conceptual expansion)
 
 ### B) AGI Theory / Control (Series overview)
-**Start with V8** — series gateway framing (Time-as-an-Ally, control structure).  
+**Start with V8 (v2)** — series gateway framing (Time-as-an-Ally, control structure).  
 - V8 (v2) — Time-Tube Control for Self-Safe AGI  
-  Zenodo (v2): https://zenodo.org/records/18137204  
+  https://zenodo.org/records/18137204  
   Concept DOI (all versions): 10.5281/zenodo.17970577  
   SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
 
@@ -30,19 +30,19 @@ Decision-OS has **two entry paths**. Pick the one that matches your interest:
 ## Series Index (Zenodo)
 
 - **V4** — Polaris-Origin: An Entry OS for Seeing Structure with AI  
-  Zenodo: https://zenodo.org/records/17905930
+  https://zenodo.org/records/17905930
 
 - **V5** — SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life  
-  Zenodo: https://zenodo.org/records/18051625
+  https://zenodo.org/records/18051625
 
 - **V6** — (PIC) Canonical Memory Architecture for Self-Recursive Intelligence  
-  Zenodo: https://zenodo.org/records/17717518
+  https://zenodo.org/records/17717518
 
 - **V7** — Aspire Intelligence for AGI: An Operational and Self-Recursive Structural Definition of AGI (A×G×I)  
-  Zenodo: https://zenodo.org/records/17932554
+  https://zenodo.org/records/17932554
 
 - **V8 (v2)** — Time-Tube Control for Self-Safe AGI  
-  Zenodo (v2): https://zenodo.org/records/18137204  
+  https://zenodo.org/records/18137204  
   Concept DOI (all versions): 10.5281/zenodo.17970577  
   SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
 
