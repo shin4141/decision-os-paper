@@ -51,11 +51,11 @@ Decision-OS has **two entry paths**. Pick the one that matches your interest.
 
 ---
 
-## Notes (Zenodo)
-
-- **Time-is-an-Ally (1P Note)** — As-of Preserving Re-evaluation Coefficient (Genesis×Time)  
-  Zenodo DOI: https://doi.org/10.5281/zenodo.18158755  
-  Source (GitHub): `notes/time-is-an-ally/Decision_OS_Note_Time_is_an_Ally_1P.pdf`
+Notes (Zenodo)
+Time-is-an-Ally v2 — Value amplification with disciplined re-evaluation (Ta) and discoverability (Da)
+Zenodo (v2 DOI): https://doi.org/10.5281/zenodo.18211673
+Zenodo (v1 DOI, 1P minimal): https://doi.org/10.5281/zenodo.18158755
+Source (GitHub): notes/time-is-an-ally/
 
 ---
 
