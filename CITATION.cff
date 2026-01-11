@@ -1,20 +1,49 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it."
-title: "Decision-OS Note: Time-is-an-Ally (Genesis×Time)"
-type: report
+message: "If you use this work, please cite the relevant Zenodo DOI (V5 or V8 v2)."
+title: "decision-os-paper (Decision-OS V4–V8 Gateway)"
+type: software
 authors:
-  - name: "Shin"
-date-released: 2026-01-06
-abstract: >
-  Time-is-an-Ally is not a forecasting formula. It preserves as-of evaluation
-  and opens re-evaluation weight only when external signals are observed.
-keywords:
-  - Decision-OS
-  - Time-is-an-Ally
-  - as-of
-  - re-evaluation
-  - Genesis
-  - trajectory
-license: "CC-BY-4.0"
+  - family-names: "Nagata"
+    given-names: "Shinichi"
+date-released: "2026-01-10"
 repository-code: "https://github.com/shin4141/decision-os-paper"
-doi: "10.5281/zenodo.18158755"
+url: "https://github.com/shin4141/decision-os-paper"
+license: "CC-BY-4.0"
+keywords:
+  - "Decision-OS"
+  - "AI Safety"
+  - "AGI safety"
+  - "Irreversibility"
+  - "Risk control"
+  - "Auditability"
+  - "Zero-knowledge"
+  - "Time-Tube"
+  - "PIC"
+
+references:
+  - type: report
+    title: "Decision-OS V5 SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.18051625"
+    url: "https://zenodo.org/records/18051625"
+    year: 2025
+
+  - type: report
+    title: "Decision-OS V8 (v2): Time-Tube Control for Self-Safe AGI"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.18137204"
+    url: "https://zenodo.org/records/18137204"
+    year: 2026
+
+  - type: report
+    title: "Time-is-an-Ally (1P Note): As-of Preserving Re-evaluation Coefficient (Genesis×Time)"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.18158755"
+    url: "https://doi.org/10.5281/zenodo.18158755"
+    year: 2026
