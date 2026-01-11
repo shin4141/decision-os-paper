@@ -39,11 +39,12 @@ references:
     url: "https://zenodo.org/records/18137204"
     year: 2026
 
-  - type: report
-    title: "Time-is-an-Ally (1P Note): As-of Preserving Re-evaluation Coefficient (Genesis×Time)"
+   - type: report
+    title: "Decision-OS Note: Time-is-an-Ally v2"
     authors:
       - family-names: "Nagata"
         given-names: "Shinichi"
-    doi: "10.5281/zenodo.18158755"
-    url: "https://doi.org/10.5281/zenodo.18158755"
+    doi: "10.5281/zenodo.18211673"
+    url: "https://doi.org/10.5281/zenodo.18211673"
     year: 2026
+
