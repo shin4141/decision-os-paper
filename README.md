@@ -43,6 +43,9 @@ Decision-OS has **two entry paths**. Pick the one that matches your interest.
 
 - **V7** — Aspire Intelligence for AGI: An Operational and Self-Recursive Structural Definition of AGI (A×G×I)  
   https://zenodo.org/records/17932554
+  
+- **V7 Addendum (0.3)** — Why Aspire and Why PIC (Supplement; minimal necessity of Aspire and PIC)
+  https://doi.org/10.5281/zenodo.18220351
 
 - **V8 (v2)** — Time-Tube Control for Self-Safe AGI  
   https://zenodo.org/records/18137204  
