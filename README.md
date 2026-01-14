@@ -41,6 +41,9 @@ Decision-OS has **two entry paths**. Pick the one that matches your interest.
 - **V6** — (PIC) Canonical Memory Architecture for Self-Recursive Intelligence  
   https://zenodo.org/records/17717518
 
+- **V6 Addendum (Verification Note, 1p)** — Evaluation Hooks for PIC (Supplement; evaluation hooks, protocol, falsify)
+  https://github.com/shin4141/decision-os-paper/blob/main/notes/v6-addendum/Decision_OS_V6_Addendum_Verification_Note_1p.pdf
+
 - **V7** — Aspire Intelligence for AGI: An Operational and Self-Recursive Structural Definition of AGI (A×G×I)  
   https://zenodo.org/records/17932554
   
