@@ -42,7 +42,7 @@ Decision-OS has **two entry paths**. Pick the one that matches your interest.
   https://zenodo.org/records/17717518
 
 - **V6 Addendum (Verification Note, 1p)** — Evaluation Hooks for PIC (Supplement; evaluation hooks, protocol, falsify)
-  https://github.com/shin4141/decision-os-paper/blob/main/notes/v6-addendum/Decision_OS_V6_Addendum_Verification_Note_1p.pdf
+  https://doi.org/10.5281/zenodo.18240015
 
 - **V7** — Aspire Intelligence for AGI: An Operational and Self-Recursive Structural Definition of AGI (A×G×I)  
   https://zenodo.org/records/17932554
