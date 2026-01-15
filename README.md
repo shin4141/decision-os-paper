@@ -38,6 +38,10 @@ Decision-OS has **two entry paths**. Pick the one that matches your interest.
 - **V5** — SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life  
   https://zenodo.org/records/18051625
 
+- **V5 Addendum (0.3)** — SiriusA Adoption Gate: Hold-First Auditing for Irreversible Actions (Supplement; adoption fit check, state machine, evidence bundle)
+  https://doi.org/10.5281/zenodo.18252623
+
+
 - **V6** — (PIC) Canonical Memory Architecture for Self-Recursive Intelligence  
   https://zenodo.org/records/17717518
 
