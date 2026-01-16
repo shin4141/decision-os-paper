@@ -9,7 +9,8 @@ Canonical artifacts are hosted on **Zenodo (DOI)**; GitHub is used for **indexin
 
 Decision-OS has **two entry paths**. Pick the one that matches your interest.
 
-**Citation:** Cite V5 for implementation (SiriusA) and V8 v2 for the control/gateway framing (Time-Tube).
+**Citation:** Cite V5 for implementation (SiriusA). For the adoption gate entry, cite V5 Addendum (0.3). For the control/gateway framing, cite V8 v2 (Time-Tube).
+
 
 
 ### A) Practical Safety / Implementation (Real-world)
