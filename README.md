@@ -13,6 +13,16 @@ Decision-OS has **two entry paths**. Pick the one that matches your interest.
 
 
 ### A) Practical Safety / Implementation (Real-world)
+Quick entry (3 short addenda, links only)
+- V5 Addendum (0.3) — SiriusA Adoption Gate (state machine + HOLD(evidence) + five-line contract)
+  https://doi.org/10.5281/zenodo.18252623
+- V6 Addendum (1p) — Verification Note for PIC (evaluation hooks; falsifiable protocol)
+  https://doi.org/10.5281/zenodo.18240015
+- V7 Addendum (0.3) — Why Aspire and Why PIC (minimal necessity)
+  https://doi.org/10.5281/zenodo.18220351
+
+(If you only read one: start with V5 Addendum.)
+
 **Start with V5** — ZK-backed approval, two-step confirmation, revoke window (Δt), duress-aware control.  
 - V5 — SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life  
   https://zenodo.org/records/18051625
