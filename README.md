@@ -46,30 +46,29 @@ Quick entry (3 short addenda, links only)
 ## Series Index (Zenodo)
 
 - **V4** — Polaris-Origin: An Entry OS for Seeing Structure with AI  
-  https://zenodo.org/records/17905930
+  https://doi.org/10.5281/zenodo.17905930
 
 - **V5** — SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life  
-  https://zenodo.org/records/18051625
+  https://doi.org/10.5281/zenodo.18051625
 
-- **V5 Addendum (0.3)** — SiriusA Adoption Gate: Hold-First Auditing for Irreversible Actions (Supplement; adoption fit check, state machine, evidence bundle)
+- **V5 Addendum (0.3)** — SiriusA Adoption Gate: Hold-First Auditing for Irreversible Actions (Supplement; adoption fit check, state machine, evidence bundle)  
   https://doi.org/10.5281/zenodo.18252623
 
-
 - **V6** — (PIC) Canonical Memory Architecture for Self-Recursive Intelligence  
-  https://zenodo.org/records/17717518
+  https://doi.org/10.5281/zenodo.17717518
 
-- **V6 Addendum (Verification Note, 1p)** — Evaluation Hooks for PIC (Supplement; evaluation hooks, protocol, falsify)
+- **V6 Addendum (Verification Note, 1p)** — Evaluation Hooks for PIC (Supplement; evaluation hooks, protocol, falsify)  
   https://doi.org/10.5281/zenodo.18240015
 
 - **V7** — Aspire Intelligence for AGI: An Operational and Self-Recursive Structural Definition of AGI (A×G×I)  
-  https://zenodo.org/records/17932554
-  
-- **V7 Addendum (0.3)** — Why Aspire and Why PIC (Supplement; minimal necessity of Aspire and PIC)
+  https://doi.org/10.5281/zenodo.17932554
+
+- **V7 Addendum (0.3)** — Why Aspire and Why PIC (Supplement; minimal necessity of Aspire and PIC)  
   https://doi.org/10.5281/zenodo.18220351
 
 - **V8 (v2)** — Time-Tube Control for Self-Safe AGI  
-  https://zenodo.org/records/18137204  
-  Concept DOI (all versions): 10.5281/zenodo.17970577  
+  https://doi.org/10.5281/zenodo.18137204  
+  Concept DOI (all versions): https://doi.org/10.5281/zenodo.17970577  
   SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
 
 ---
