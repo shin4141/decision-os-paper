@@ -93,7 +93,7 @@ If a model is fluent, do not trust the summary. Start from claims:
 ## Companion Tool (Unlisted)
 ⚖️ Decision Insurance — personal decision structuring (not legal/tax/medical/investment advice).  
 Fixed order: max loss → 3 failure modes → hedge → verdict + one next step.  
-▶︎ https://chatgpt.com/g/g-6969999c16bc8191852ad175b08db8ea-decision-insurance
+▶︎ - Tools hub: https://github.com/shin4141/decision-os-paper/blob/main/notes/tools.md
 
 ---
 
