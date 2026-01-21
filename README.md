@@ -1,4 +1,4 @@
-# Decision-OS Paper (V4–V8)
+# Decision-OS Paper (V4–V9)
 
 This repository is the **public gateway** for the Decision-OS series.  
 Canonical artifacts are hosted on **Zenodo (DOI)**; GitHub is used for **indexing and evidence routing**.
@@ -70,6 +70,11 @@ Quick entry (3 short addenda, links only)
   https://doi.org/10.5281/zenodo.18137204  
   Concept DOI (all versions): https://doi.org/10.5281/zenodo.17970577  
   SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
+
+- **V9 (v1, JP)** — Impact-Weighted Release (Japanese Edition)
+  https://doi.org/10.5281/zenodo.18321009
+  Concept DOI (all versions): https://doi.org/10.5281/zenodo.18321008
+
 
 ---
 
