@@ -16,3 +16,5 @@ This folder contains the Japanese (JP) paper PDF and the finalized figures for D
 ## Notes
 - Figures are labeled in English for reuse across JP/EN versions.
 - Canon notation is unified: `evidence = UNION`.
+
+Lock commit: 87cf9ef4694732e915331e571f6016c9e3815e07
