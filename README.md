@@ -72,8 +72,8 @@ Quick entry (3 short addenda, links only)
   SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
 
 - **V9 (v1, JP)** — Impact-Weighted Release (Japanese Edition)
-  https://doi.org/10.5281/zenodo.18321009
-  Concept DOI (all versions): https://doi.org/10.5281/zenodo.18321008
+  - https://doi.org/10.5281/zenodo.18321009
+  - Concept DOI (all versions): https://doi.org/10.5281/zenodo.18321008
 
 
 ---
