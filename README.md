@@ -13,6 +13,7 @@ Decision-OS has **two entry paths**. Pick the one that matches your interest.
 - Implementation: cite V5 (SiriusA)
 - Adoption gate entry: cite V5 Addendum (0.3)
 - Control/gateway framing: cite V8 v2 (Time-Tube)
+- Implementation (MMAR / L0 core): mmar-l0-core (CI + schema contract)
 
 
 ### A) Practical Safety / Implementation (Real-world)
