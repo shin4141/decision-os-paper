@@ -5,8 +5,8 @@ This folder contains the Japanese (JP) paper PDF and the finalized figures for D
 ## Files
 
 ### Paper (PDF)
-- `pdf/Decision-OS_V9_Impact-Weighted_Release_v1_JP.pdf`
-- `pdf/Decision-OS_V9_Impact-Weighted_Release_v1_EN.pdf` *(to be added)*
+- `Decision-OS_V9_Impact-Weighted_Release_v1_JP.pdf`
+- `Decision-OS_V9_Impact-Weighted_Release_v1_EN.pdf` *(to be added)*
 
 ### Figures (final, locked)
 - `fig/Fig1_final_v9_v8_to_v9.jpg` — V8→V9 connection (internal safety → operational constitution)
