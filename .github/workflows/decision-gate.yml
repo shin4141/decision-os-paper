@@ -58,6 +58,7 @@ jobs:
 
           if scenario == "block":
             delta = {
+            　"block": True,
               "delta_id": "demo-block",
               "summary": "Irreversible + high externality action (demo) => expected BLOCK",
               "impact": { "externality": "high", "irreversibility": "high", "power": "high" },
@@ -66,7 +67,6 @@ jobs:
             }
           else:
             delta = {
-            　"block": True,
               "delta_id": "demo-pass",
               "summary": "Low-impact reversible change (demo) => expected PASS/DELAY (not BLOCK)",
               "impact": { "externality": "low", "irreversibility": "low", "power": "low" },
