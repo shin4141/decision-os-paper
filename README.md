@@ -2,6 +2,7 @@
 
 **Decision Gate demo (Actions):** Run workflow → `scenario=pass` (green) / `scenario=block` (red).  
 Generates `decision_gate.json` via `mmar-l0-core` and enforces PASS/DELAY/BLOCK in CI.
+Output includes `reason_codes`, `evidence_paths`, and `suggested_fix` in `decision_gate.json` (Artifacts).
 
 ## Quick demo
 1) Actions → Decision Gate (B-min penetration) → Run workflow  
