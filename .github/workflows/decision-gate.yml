@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       scenario:
-        description: "gate scenario (pass | block)"
+        description: "gate scenario (pass | delay | block)"
         required: true
         default: "pass"
 
