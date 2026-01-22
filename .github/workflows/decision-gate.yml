@@ -53,28 +53,32 @@ jobs:
           }
 
           if scenario == "block":
+            # AUTO-BLOCK: high x high + no evidence
             delta = {
-              "delta_id": "demo-block",
-              "summary": "demo block",
+              "delta_id": "demo-auto-block",
+              "summary": "auto block (high x high, no evidence)",
               "request": "abstract placeholder",
+              "impact": { "externality": "high", "irreversibility": "high" },
               "evidence": []
             }
-            delta["block"] = True
 
           elif scenario == "delay":
+            # AUTO-DELAY: no evidence, but not high x high
             delta = {
-              "delta_id": "demo-delay",
-              "summary": "demo delay",
+              "delta_id": "demo-auto-delay",
+              "summary": "auto delay (no evidence)",
               "request": "needs recheck",
-              "severity": "DELAY",
-              "evidence": ["ex:delta"]
+              "impact": { "externality": "low", "irreversibility": "low" },
+              "evidence": []
             }
 
           else:
+            # PASS: evidence exists
             delta = {
               "delta_id": "demo-pass",
-              "summary": "demo pass",
+              "summary": "pass (has evidence)",
               "request": "update README",
+              "impact": { "externality": "low", "irreversibility": "low" },
               "evidence": ["ex:doc"]
             }
 
@@ -114,3 +118,4 @@ jobs:
         with:
           name: decision_gate
           path: decision_gate.json
+
