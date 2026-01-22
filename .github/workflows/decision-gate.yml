@@ -58,20 +58,17 @@ jobs:
 
           if scenario == "block":
             delta = {
-            　"block": True,
               "delta_id": "demo-block",
-              "summary": "Irreversible + high externality action (demo) => expected BLOCK",
-              "impact": { "externality": "high", "irreversibility": "high", "power": "high" },
-              "request": "Abstract misuse-risk placeholder (no actionable details).",
-              "notes": ["Control demo only."]
+              "summary": "demo block",
+              "request": "abstract placeholder"
             }
+            # IMPORTANT: this is what mmar-l0-core/core/run_once.py checks
+            delta["block"] = True
           else:
             delta = {
               "delta_id": "demo-pass",
-              "summary": "Low-impact reversible change (demo) => expected PASS/DELAY (not BLOCK)",
-              "impact": { "externality": "low", "irreversibility": "low", "power": "low" },
-              "request": "Update README wording / add a safe diagram link",
-              "notes": ["Control demo only."]
+              "summary": "demo pass",
+              "request": "update README"
             }
 
           with open("asof_pack.json", "w", encoding="utf-8") as f:
@@ -95,27 +92,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          echo "[gate] SCENARIO=${SCENARIO}"
           python - <<'PY'
-          import json, os, sys
-
-          scenario = os.environ.get("SCENARIO","pass").strip()
-
+          import json, sys
           with open("decision_gate.json","r",encoding="utf-8") as f:
             data = json.load(f)
-
           sev = (data.get("severity") or "").upper().strip() or "BLOCK"
-
-          # demo alignment: scenario=block => force gate severity to BLOCK (evidence consistency)
-          if scenario == "block":
-            sev = "BLOCK"
-            data["severity"] = "BLOCK"
-            with open("decision_gate.json","w",encoding="utf-8") as f:
-              json.dump(data, f, ensure_ascii=False, indent=2)
-
-          print("[gate] scenario =", scenario)
-          print("[gate] severity  =", sev)
-
+          print("[gate] severity =", sev)
           sys.exit(1 if sev == "BLOCK" else 0)
           PY
 
@@ -125,3 +107,4 @@ jobs:
         with:
           name: decision_gate
           path: decision_gate.json
+
