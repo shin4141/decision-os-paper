@@ -94,12 +94,17 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          echo "[gate] SCENARIO=${SCENARIO}"
           python - <<'PY'
-          import json, sys
+          import json, os, sys
+          scenario = os.environ.get("SCENARIO","pass").strip()
           with open("decision_gate.json","r",encoding="utf-8") as f:
             data = json.load(f)
-          sev = (data.get("severity") or data.get("Severity") or "").upper().strip() or "BLOCK"
-          print("[gate] severity =", sev)
+          sev = (data.get("severity") or "").upper().strip() or "BLOCK"
+          print("[gate] scenario =", scenario)
+          print("[gate] severity  =", sev)
+          if scenario == "block":
+            sys.exit(1)
           sys.exit(1 if sev == "BLOCK" else 0)
           PY
 
