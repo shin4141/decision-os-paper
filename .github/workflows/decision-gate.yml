@@ -28,11 +28,12 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install mmar-l0-core
-        run: |
-          python -m pip install --upgrade pip
-          # NOTE: repo path is assumed. If your repo is different, change this URL only.
-          python -m pip install "git+https://github.com/shin4141/mmar-l0-core@main"
+      - name: Checkout mmar-l0-core
+        uses: actions/checkout@v4
+        with:
+          repository: shin4141/mmar-l0-core
+          ref: main
+          path: mmar-l0-core
 
       - name: Generate temp inputs (asof_pack.json / delta_entry.json)
         shell: bash
