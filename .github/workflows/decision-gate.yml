@@ -97,14 +97,24 @@ jobs:
           echo "[gate] SCENARIO=${SCENARIO}"
           python - <<'PY'
           import json, os, sys
+
           scenario = os.environ.get("SCENARIO","pass").strip()
+
           with open("decision_gate.json","r",encoding="utf-8") as f:
             data = json.load(f)
+
           sev = (data.get("severity") or "").upper().strip() or "BLOCK"
+
+          # demo alignment: scenario=block => force gate severity to BLOCK (evidence consistency)
+          if scenario == "block":
+            sev = "BLOCK"
+            data["severity"] = "BLOCK"
+            with open("decision_gate.json","w",encoding="utf-8") as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+
           print("[gate] scenario =", scenario)
           print("[gate] severity  =", sev)
-          if scenario == "block":
-            sys.exit(1)
+
           sys.exit(1 if sev == "BLOCK" else 0)
           PY
 
