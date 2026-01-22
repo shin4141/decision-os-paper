@@ -1,3 +1,8 @@
+![Decision Gate](https://github.com/shin4141/decision-os-paper/actions/workflows/decision-gate.yml/badge.svg)
+
+**Decision Gate demo (Actions):** Run workflow → `scenario=pass` (green) / `scenario=block` (red).  
+Generates `decision_gate.json` via `mmar-l0-core` and enforces PASS/DELAY/BLOCK in CI.
+
 # Decision-OS Paper (V4–V9)
 
 This repository is the **public gateway** for the Decision-OS series.  
