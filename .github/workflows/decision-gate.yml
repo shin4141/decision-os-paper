@@ -66,6 +66,7 @@ jobs:
             }
           else:
             delta = {
+            　"block": True,
               "delta_id": "demo-pass",
               "summary": "Low-impact reversible change (demo) => expected PASS/DELAY (not BLOCK)",
               "impact": { "externality": "low", "irreversibility": "low", "power": "low" },
