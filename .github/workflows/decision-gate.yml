@@ -23,11 +23,6 @@ jobs:
       - name: Checkout decision-os-paper
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
       - name: Checkout mmar-l0-core
         uses: actions/checkout@v4
         with:
@@ -35,15 +30,21 @@ jobs:
           ref: main
           path: mmar-l0-core
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
       - name: Generate temp inputs (asof_pack.json / delta_entry.json)
         shell: bash
         run: |
           set -euo pipefail
-          echo "SCENARIO=${SCENARIO}"
+          python - <<'PY'
+          import json, os
 
-          # Minimal As-of pack (enough to demonstrate execution + control)
-          cat > asof_pack.json <<'JSON'
-          {
+          scenario = os.environ.get("SCENARIO", "pass").strip()
+
+          asof = {
             "asof_timestamp_jst": "2026-01-22",
             "seat": { "decision_owner": "Shin", "auditor": "CI" },
             "objective": "Demonstrate gate generation and CI enforcement",
@@ -54,64 +55,52 @@ jobs:
             "finite_closure": ["BLOCK => stop"],
             "ssot": { "repo": "decision-os-paper", "ref": "github.sha" }
           }
-          JSON
 
-          # Scenario-specific delta (PASS by default; BLOCK on demand)
-          if [ "${SCENARIO}" = "block" ]; then
-            cat > delta_entry.json <<'JSON'
-            {
+          if scenario == "block":
+            delta = {
               "delta_id": "demo-block",
               "summary": "Irreversible + high externality action (demo) => expected BLOCK",
               "impact": { "externality": "high", "irreversibility": "high", "power": "high" },
-              "request": "Publish something that could be directly misused at scale (demo placeholder)",
-              "notes": ["This is a control demo. Content remains abstract; no actionable details."]
+              "request": "Abstract misuse-risk placeholder (no actionable details).",
+              "notes": ["Control demo only."]
             }
-            JSON
-          else
-            cat > delta_entry.json <<'JSON'
-            {
+          else:
+            delta = {
               "delta_id": "demo-pass",
-              "summary": "Low-impact reversible change (demo) => expected PASS/DELAY (but not BLOCK)",
+              "summary": "Low-impact reversible change (demo) => expected PASS/DELAY (not BLOCK)",
               "impact": { "externality": "low", "irreversibility": "low", "power": "low" },
               "request": "Update README wording / add a safe diagram link",
-              "notes": ["This is a control demo; reversible and low externality."]
+              "notes": ["Control demo only."]
             }
-            JSON
-          fi
 
-          echo "--- asof_pack.json ---"
-          cat asof_pack.json
-          echo "--- delta_entry.json ---"
-          cat delta_entry.json
+          with open("asof_pack.json", "w", encoding="utf-8") as f:
+            json.dump(asof, f, ensure_ascii=False, indent=2)
+          with open("delta_entry.json", "w", encoding="utf-8") as f:
+            json.dump(delta, f, ensure_ascii=False, indent=2)
+
+          print("SCENARIO=", scenario)
+          PY
 
       - name: Run gate (mmar-l0-core)
+        shell: bash
         run: |
           set -euo pipefail
-
-          # Try CLI-args style first; fallback to no-args style
-          python -m core.run_once --asof asof_pack.json --delta delta_entry.json --out decision_gate.json \
-            || python -m core.run_once
-
+          export PYTHONPATH="${GITHUB_WORKSPACE}/mmar-l0-core:${PYTHONPATH:-}"
+          python -m core.run_once --asof asof_pack.json --delta delta_entry.json --out decision_gate.json
           echo "--- decision_gate.json ---"
           cat decision_gate.json
 
       - name: Enforce CI by severity (BLOCK => exit 1)
+        shell: bash
         run: |
+          set -euo pipefail
           python - <<'PY'
           import json, sys
-          path = "decision_gate.json"
-          with open(path, "r", encoding="utf-8") as f:
-              data = json.load(f)
-
-          sev = (data.get("severity") or data.get("Severity") or "").upper().strip()
-          if not sev:
-              # safety-side default: if missing, treat as BLOCK to avoid silent pass
-              sev = "BLOCK"
-
-          print(f"[gate] severity = {sev}")
-          if sev == "BLOCK":
-              sys.exit(1)
-          sys.exit(0)
+          with open("decision_gate.json","r",encoding="utf-8") as f:
+            data = json.load(f)
+          sev = (data.get("severity") or data.get("Severity") or "").upper().strip() or "BLOCK"
+          print("[gate] severity =", sev)
+          sys.exit(1 if sev == "BLOCK" else 0)
           PY
 
       - name: Upload gate artifact (decision_gate.json)
