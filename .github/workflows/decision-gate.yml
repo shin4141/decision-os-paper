@@ -19,6 +19,9 @@ on:
           - crypto_block
           - coord_delay
           - coord_block
+          - phish_delay
+          - allowlist_block
+          - secrets_block
 
 permissions:
   contents: read
