@@ -120,10 +120,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          export PYTHONPATH="${GITHUB_WORKSPACE}/mmar-l0-core:${PYTHONPATH:-}"
           python -m core.run_once --asof asof_pack.json --delta delta_entry.json --out decision_gate.json
-          echo "--- decision_gate.json ---"
-          cat decision_gate.json
 
       - name: Annotate decision_gate.json (crypto reason codes)
         shell: bash
@@ -132,7 +129,6 @@ jobs:
           python - <<'PY'
           import json
 
-          # Load inputs + output
           with open("delta_entry.json","r",encoding="utf-8") as f:
             delta = json.load(f)
           with open("decision_gate.json","r",encoding="utf-8") as f:
@@ -149,10 +145,8 @@ jobs:
           irr = (impact.get("irreversibility") or "").lower()
 
           if crypto and sev in ("DELAY","BLOCK"):
-            if "CRYPTO_CONTEXT" not in reasons:
-              reasons.append("CRYPTO_CONTEXT")
+            reasons.append("CRYPTO_CONTEXT")
 
-            # Domain-specific reason codes
             if sev == "DELAY" and not evidence:
               if action == "SIGN":
                 reasons.append("SIGNATURE_RISK_NO_EVIDENCE")
@@ -169,19 +163,32 @@ jobs:
 
           # de-dup preserving order
           seen = set()
-          reasons2 = []
+          out = []
           for r in reasons:
-            if r not in seen:
+            if r and r not in seen:
               seen.add(r)
-              reasons2.append(r)
+              out.append(r)
 
-          gate["reason_codes"] = reasons2
+          gate["reason_codes"] = out
 
           with open("decision_gate.json","w",encoding="utf-8") as f:
             json.dump(gate, f, ensure_ascii=False, indent=2)
 
-          print("[gate] annotated reason_codes =", reasons2)
+          print("[gate] annotated reason_codes =", out)
           PY
+
+      - name: Show decision_gate.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "--- decision_gate.json (annotated) ---"
+          cat decision_gate.json
+
+      - name: Upload gate artifact (decision_gate.json)
+        uses: actions/upload-artifact@v4
+        with:
+          name: decision_gate
+          path: decision_gate.json
 
       - name: Enforce CI by severity (BLOCK => exit 1)
         shell: bash
