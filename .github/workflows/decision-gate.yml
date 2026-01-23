@@ -17,6 +17,8 @@ on:
           - block
           - crypto_delay
           - crypto_block
+          - coord_delay
+          - coord_block
 
 permissions:
   contents: read
