@@ -120,6 +120,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          export PYTHONPATH="${GITHUB_WORKSPACE}/mmar-l0-core:${PYTHONPATH:-}"
           python -m core.run_once --asof asof_pack.json --delta delta_entry.json --out decision_gate.json
 
       - name: Annotate decision_gate.json (crypto reason codes)
@@ -181,14 +182,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          echo "--- decision_gate.json (annotated) ---"
+          echo "--- decision_gate.json ---"
           cat decision_gate.json
-
-      - name: Upload gate artifact (decision_gate.json)
-        uses: actions/upload-artifact@v4
-        with:
-          name: decision_gate
-          path: decision_gate.json
 
       - name: Enforce CI by severity (BLOCK => exit 1)
         shell: bash
@@ -214,9 +209,7 @@ jobs:
           fi
 
       - name: Upload gate artifact (decision_gate.json)
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: decision_gate
           path: decision_gate.json
-
