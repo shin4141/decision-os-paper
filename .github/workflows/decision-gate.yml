@@ -159,7 +159,7 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY'
-          import json, os
+          import json
 
           def load_json(path, default=None):
             try:
@@ -167,28 +167,30 @@ jobs:
                 return json.load(f)
             except FileNotFoundError:
               return default if default is not None else {}
-          
+
           delta = load_json("delta_entry.json", {})
           gate  = load_json("decision_gate.json", {})
           th    = load_json("thresholds.json", {"coordination":{"delay_score":3,"block_score":5,"top10_pct_delay":40,"top10_pct_block":60}})
           th_c  = th.get("coordination") or {}
 
-          sev = (gate.get("severity") or "").upper().strip()
+          sev = (gate.get("severity") or "").upper().strip() or "PASS"
           reasons = list(gate.get("reason_codes") or [])
 
-          # --- Crypto annotations (existing) ---
-          crypto = delta.get("crypto") or {}
-          action = (crypto.get("action") or "").upper().strip()
-          amount = (crypto.get("amount") or "").lower().strip()
           evidence = delta.get("evidence") or []
           impact = delta.get("impact") or {}
           ext = (impact.get("externality") or "").lower()
           irr = (impact.get("irreversibility") or "").lower()
 
+          # --- Crypto annotations ---
+          crypto = delta.get("crypto") or {}
+          action = (crypto.get("action") or "").upper().strip()
+          amount = (crypto.get("amount") or "").lower().strip()
+
           if crypto:
             reasons.append("CRYPTO_CONTEXT")
             if action == "APPROVE" and amount in ("unlimited","infinite","max","uint256max"):
               reasons.append("APPROVAL_UNLIMITED_ALLOWANCE")
+
             if sev in ("DELAY","BLOCK"):
               if sev == "DELAY" and not evidence:
                 if action == "SIGN":
@@ -197,14 +199,17 @@ jobs:
                   reasons.append("APPROVAL_RISK_NO_EVIDENCE")
                 else:
                   reasons.append("CRYPTO_ACTION_NO_EVIDENCE")
+
               if sev == "BLOCK" and not evidence and ext == "high" and irr == "high":
                 if action == "APPROVE":
                   reasons.append("TX_APPROVAL_HIGH_X_HIGH_NO_EVIDENCE")
                 else:
                   reasons.append("CRYPTO_HIGH_X_HIGH_NO_EVIDENCE")
 
-          # --- Coordination / distribution annotations (new) ---
+          # --- Coordination / distribution annotations + severity override ---
           dist = delta.get("distribution") or {}
+          coord_override = None  # None | "DELAY" | "BLOCK"
+
           if dist:
             reasons.append("DISTRIBUTION_CONTEXT")
             holders = int(dist.get("holders") or 0)
@@ -213,7 +218,7 @@ jobs:
             bundlers= float(dist.get("bundlers_pct") or 0)
             none_sold = bool(dist.get("snipers_none_sold") or False)
 
-            # Simple coordination score (0..)
+            # Score (0..5)
             score = 0
             if top10 >= th_c.get("top10_pct_delay", 40): score += 1
             if (snipers + bundlers) >= 40: score += 1
@@ -225,8 +230,36 @@ jobs:
 
             if score >= th_c.get("block_score", 5):
               reasons.append("COORDINATION_EXTREME_SKIP")
+              coord_override = "BLOCK"
             elif score >= th_c.get("delay_score", 3):
               reasons.append("COORDINATION_HIGH_RECHECK")
+              coord_override = "DELAY"
+
+          # Apply severity override with safe precedence:
+          # BLOCK > DELAY > PASS
+          if coord_override == "BLOCK":
+            sev = "BLOCK"
+            gate["next_action"] = None
+            gate["until"] = None
+            gate["recheck"] = []
+            gate["suggested_fix"] = ["Skip this token (coordination suspected) or add stronger evidence to justify participation."]
+          elif coord_override == "DELAY":
+            sev = "DELAY"
+            # Keep existing until if core already set it; otherwise set a short recheck window
+            if not gate.get("until"):
+              gate["until"] = "AUTO_SHORT_RECHECK"
+            gate["next_action"] = "RERUN_AFTER_UNTIL"
+            gate["recheck"] = [
+              "Verify holder distribution / bundled buys via independent source",
+              "Check snipers/bundlers share and whether snipers have started selling",
+              "Re-run after evidence is attached"
+            ]
+            gate["suggested_fix"] = [
+              "Attach distribution evidence (screenshots/links) to delta.evidence, then re-run.",
+              "If still highly coordinated, skip."
+            ]
+
+          gate["severity"] = sev
 
           # de-dup preserving order
           seen, out = set(), []
@@ -236,10 +269,12 @@ jobs:
               out.append(r)
 
           gate["reason_codes"] = out
+
           with open("decision_gate.json","w",encoding="utf-8") as f:
             json.dump(gate, f, ensure_ascii=False, indent=2)
 
           print("[gate] annotated reason_codes =", out)
+          print("[gate] final severity =", sev)
           PY
 
       - name: Show decision_gate.json
