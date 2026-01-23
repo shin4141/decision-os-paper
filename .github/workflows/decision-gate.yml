@@ -205,12 +205,12 @@ jobs:
           export PYTHONPATH="${GITHUB_WORKSPACE}/mmar-l0-core:${PYTHONPATH:-}"
           python -m core.run_once --asof asof_pack.json --delta delta_entry.json --out decision_gate.json
 
-      - name: Annotate decision_gate.json (crypto + coordination reason codes)
+      - name: Annotate decision_gate.json (policy packs)
         shell: bash
         run: |
           set -euo pipefail
           python - <<'PY'
-          import json
+          import json, urllib.parse
 
           def load_json(path, default=None):
             try:
@@ -232,7 +232,18 @@ jobs:
           ext = (impact.get("externality") or "").lower()
           irr = (impact.get("irreversibility") or "").lower()
 
-          # --- Crypto annotations ---
+          def override(new_sev, suggested_fix=None, recheck=None, until=None):
+            nonlocal sev
+            # precedence: BLOCK > DELAY > PASS
+            rank = {"PASS":0,"DELAY":1,"BLOCK":2}
+            if rank.get(new_sev,0) > rank.get(sev,0):
+              sev = new_sev
+              if suggested_fix is not None: gate["suggested_fix"] = suggested_fix
+              if recheck is not None: gate["recheck"] = recheck
+              if until is not None: gate["until"] = until
+              gate["next_action"] = None if new_sev == "BLOCK" else "RERUN_AFTER_UNTIL"
+
+          # --- Crypto pack ---
           crypto = delta.get("crypto") or {}
           action = (crypto.get("action") or "").upper().strip()
           amount = (crypto.get("amount") or "").lower().strip()
@@ -242,25 +253,8 @@ jobs:
             if action == "APPROVE" and amount in ("unlimited","infinite","max","uint256max"):
               reasons.append("APPROVAL_UNLIMITED_ALLOWANCE")
 
-            if sev in ("DELAY","BLOCK"):
-              if sev == "DELAY" and not evidence:
-                if action == "SIGN":
-                  reasons.append("SIGNATURE_RISK_NO_EVIDENCE")
-                elif action == "APPROVE":
-                  reasons.append("APPROVAL_RISK_NO_EVIDENCE")
-                else:
-                  reasons.append("CRYPTO_ACTION_NO_EVIDENCE")
-
-              if sev == "BLOCK" and not evidence and ext == "high" and irr == "high":
-                if action == "APPROVE":
-                  reasons.append("TX_APPROVAL_HIGH_X_HIGH_NO_EVIDENCE")
-                else:
-                  reasons.append("CRYPTO_HIGH_X_HIGH_NO_EVIDENCE")
-
-          # --- Coordination / distribution annotations + severity override ---
+          # --- Coordination / distribution pack ---
           dist = delta.get("distribution") or {}
-          coord_override = None  # None | "DELAY" | "BLOCK"
-
           if dist:
             reasons.append("DISTRIBUTION_CONTEXT")
             holders = int(dist.get("holders") or 0)
@@ -269,7 +263,6 @@ jobs:
             bundlers= float(dist.get("bundlers_pct") or 0)
             none_sold = bool(dist.get("snipers_none_sold") or False)
 
-            # Score (0..5)
             score = 0
             if top10 >= th_c.get("top10_pct_delay", 40): score += 1
             if (snipers + bundlers) >= 40: score += 1
@@ -281,34 +274,54 @@ jobs:
 
             if score >= th_c.get("block_score", 5):
               reasons.append("COORDINATION_EXTREME_SKIP")
-              coord_override = "BLOCK"
+              override("BLOCK", suggested_fix=["Skip this token (coordination suspected)."])
             elif score >= th_c.get("delay_score", 3):
               reasons.append("COORDINATION_HIGH_RECHECK")
-              coord_override = "DELAY"
+              override("DELAY",
+                       suggested_fix=["Attach distribution evidence and re-run. If still coordinated, skip."],
+                       recheck=["Verify distribution/snipers via independent source", "Re-run after evidence attached"],
+                       until="AUTO_SHORT_RECHECK")
 
-          # Apply severity override with safe precedence:
-          # BLOCK > DELAY > PASS
-          if coord_override == "BLOCK":
-            sev = "BLOCK"
-            gate["next_action"] = None
-            gate["until"] = None
-            gate["recheck"] = []
-            gate["suggested_fix"] = ["Skip this token (coordination suspected) or add stronger evidence to justify participation."]
-          elif coord_override == "DELAY":
-            sev = "DELAY"
-            # Keep existing until if core already set it; otherwise set a short recheck window
-            if not gate.get("until"):
-              gate["until"] = "AUTO_SHORT_RECHECK"
-            gate["next_action"] = "RERUN_AFTER_UNTIL"
-            gate["recheck"] = [
-              "Verify holder distribution / bundled buys via independent source",
-              "Check snipers/bundlers share and whether snipers have started selling",
-              "Re-run after evidence is attached"
-            ]
-            gate["suggested_fix"] = [
-              "Attach distribution evidence (screenshots/links) to delta.evidence, then re-run.",
-              "If still highly coordinated, skip."
-            ]
+          # --- Phishing / domain pack ---
+          web = delta.get("web") or {}
+          if web:
+            reasons.append("WEB_CONTEXT")
+            url = (web.get("url") or "").strip()
+            claimed = (web.get("claimed_brand") or "").strip()
+            official = set([d.lower().strip() for d in (web.get("official_domains") or []) if d])
+
+            host = ""
+            try:
+              host = (urllib.parse.urlparse(url).hostname or "").lower()
+            except Exception:
+              host = ""
+
+            if official and host and all(not host.endswith(d) for d in official):
+              reasons.append("DOMAIN_MISMATCH_SUSPECT")
+              override("DELAY",
+                       suggested_fix=["Use official domain only; attach evidence (official link) and re-run."],
+                       recheck=["Verify the official domain from trusted source", "Re-run after evidence attached"],
+                       until="AUTO_SHORT_RECHECK")
+
+          # --- Allowlist / recipient pack ---
+          allow = delta.get("allowlist") or {}
+          tx = delta.get("transfer") or {}
+          if allow and tx:
+            reasons.append("ALLOWLIST_CONTEXT")
+            mode = (allow.get("mode") or "").upper().strip()
+            to = (tx.get("to") or "").lower().strip()
+            addresses = set([a.lower().strip() for a in (allow.get("addresses") or []) if a])
+
+            if mode == "ALLOWLIST_ONLY" and to and to not in addresses:
+              reasons.append("UNKNOWN_RECIPIENT_NOT_IN_ALLOWLIST")
+              override("BLOCK", suggested_fix=["Recipient not in allowlist. Add to allowlist only after verification."])
+
+          # --- Secrets pack ---
+          sec = delta.get("secrets") or {}
+          if sec:
+            reasons.append("SECRETS_CONTEXT")
+            reasons.append("POTENTIAL_SECRET_LEAK")
+            override("BLOCK", suggested_fix=["Do not publish secrets. Rotate keys/tokens immediately and re-run after cleanup."])
 
           gate["severity"] = sev
 
