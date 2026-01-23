@@ -6,6 +6,8 @@ Output includes `reason_codes`, `evidence_paths`, and `suggested_fix` in `decisi
 
 **Crypto example** (wallet signing / approvals): If a signing/approval request (Approve/Permit) has no evidence (e.g., screenshot/log/target URL/revoke note), the gate returns DELAY. If it is high externality × high irreversibility with no evidence, it returns BLOCK. Check decision_gate.json in GitHub Actions Artifacts.
 
+Where to look: Actions → latest “Decision Gate” run → Artifacts → decision_gate.json.
+
 ## Quick demo
 1) Actions → Decision Gate (B-min penetration) → Run workflow  
 2) scenario=pass → green / scenario=delay → yellow / scenario=block → red
