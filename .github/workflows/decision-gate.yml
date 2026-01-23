@@ -3,19 +3,20 @@ name: Decision Gate (B-min penetration)
 on:
   push:
     branches: ["main"]
+
   workflow_dispatch:
-  inputs:
-    scenario:
-      type: choice
-      description: "gate scenario"
-      required: true
-      default: pass
-      options:
-        - pass
-        - delay
-        - block
-        - crypto_delay
-        - crypto_block
+    inputs:
+      scenario:
+        type: choice
+        description: "gate scenario"
+        required: true
+        default: pass
+        options:
+          - pass
+          - delay
+          - block
+          - crypto_delay
+          - crypto_block
 
 permissions:
   contents: read
