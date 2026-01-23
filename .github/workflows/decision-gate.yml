@@ -140,27 +140,33 @@ jobs:
 
           crypto = delta.get("crypto") or {}
           action = (crypto.get("action") or "").upper().strip()
+          amount = (crypto.get("amount") or "").lower().strip()
           evidence = delta.get("evidence") or []
           impact = delta.get("impact") or {}
           ext = (impact.get("externality") or "").lower()
           irr = (impact.get("irreversibility") or "").lower()
 
-          if crypto and sev in ("DELAY","BLOCK"):
+          if crypto:
             reasons.append("CRYPTO_CONTEXT")
 
-            if sev == "DELAY" and not evidence:
-              if action == "SIGN":
-                reasons.append("SIGNATURE_RISK_NO_EVIDENCE")
-              elif action == "APPROVE":
-                reasons.append("APPROVAL_RISK_NO_EVIDENCE")
-              else:
-                reasons.append("CRYPTO_ACTION_NO_EVIDENCE")
+            # Always add a helpful hint if it's an unlimited approval pattern
+            if action == "APPROVE" and amount in ("unlimited", "infinite", "max", "uint256max"):
+              reasons.append("APPROVAL_UNLIMITED_ALLOWANCE")
 
-            if sev == "BLOCK" and not evidence and ext == "high" and irr == "high":
-              if action == "APPROVE":
-                reasons.append("TX_APPROVAL_HIGH_X_HIGH_NO_EVIDENCE")
-              else:
-                reasons.append("CRYPTO_HIGH_X_HIGH_NO_EVIDENCE")
+            if sev in ("DELAY","BLOCK"):
+              if sev == "DELAY" and not evidence:
+                if action == "SIGN":
+                  reasons.append("SIGNATURE_RISK_NO_EVIDENCE")
+                elif action == "APPROVE":
+                  reasons.append("APPROVAL_RISK_NO_EVIDENCE")
+                else:
+                  reasons.append("CRYPTO_ACTION_NO_EVIDENCE")
+
+              if sev == "BLOCK" and not evidence and ext == "high" and irr == "high":
+                if action == "APPROVE":
+                  reasons.append("TX_APPROVAL_HIGH_X_HIGH_NO_EVIDENCE")
+                else:
+                  reasons.append("CRYPTO_HIGH_X_HIGH_NO_EVIDENCE")
 
           # de-dup preserving order
           seen = set()
@@ -171,7 +177,6 @@ jobs:
               out.append(r)
 
           gate["reason_codes"] = out
-
           with open("decision_gate.json","w",encoding="utf-8") as f:
             json.dump(gate, f, ensure_ascii=False, indent=2)
 
