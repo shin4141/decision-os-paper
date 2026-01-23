@@ -11,6 +11,8 @@ Output includes `reason_codes`, `evidence_paths`, and `suggested_fix` in `decisi
 2) scenario=pass → green / scenario=delay → yellow / scenario=block → red
 3) Download artifact: run page → Artifacts → `decision_gate` (contains `decision_gate.json`)
 
+Note (badge): The workflow badge reflects the latest run on main. After running scenario=delay or scenario=block for the demo, run scenario=pass once to restore the badge to green.
+
 # Decision-OS Paper (V4–V9)
 
 This repository is the **public gateway** for the Decision-OS series.  
