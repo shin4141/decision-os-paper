@@ -1,5 +1,28 @@
 ![Decision Gate](https://github.com/shin4141/decision-os-paper/actions/workflows/decision-gate.yml/badge.svg)
 
+## What the Gate already covers (Policy Packs)
+
+The current gate implements several **policy packs** that convert detected risks
+into explicit execution decisions:
+
+- **Crypto execution risks**
+  - Unlimited approvals
+  - Missing evidence on signing / approval
+- **Distribution & coordination risks**
+  - Concentrated ownership
+  - Snipers / bundlers coordination
+- **Phishing & domain mismatch**
+  - Claimed brand vs actual domain
+- **Allowlist enforcement**
+  - Blocking transfers to unknown recipients
+- **Secrets leakage**
+  - Preventing publication or use of exposed keys/tokens
+
+Each policy emits:
+- `reason_codes` (machine-readable)
+- `severity` (`PASS | DELAY | BLOCK`)
+- `recheck` and `suggested_fix` when applicable
+
 **Decision Gate demo (Actions)**: Run the workflow with scenario=pass (green), scenario=delay (yellow), or scenario=block (red). Crypto-style demos are available via scenario=crypto_delay and scenario=crypto_block.
 
 **Crypto example** (wallet signing / approvals): If a signing/approval request (Approve/Permit) has no evidence (e.g., screenshot/log/target URL/revoke note), the gate returns DELAY. If it is high externality × high irreversibility with no evidence, it returns BLOCK. Check decision_gate.json in GitHub Actions Artifacts.
@@ -12,6 +35,22 @@
 3) Download artifact: run page → Artifacts → `decision_gate` (contains `decision_gate.json`)
 
 Note (badge): The workflow badge reflects the latest run on main. After running scenario=delay or scenario=block for the demo, run scenario=pass once to restore the badge to green.
+
+## Where MMAR fits (next phase)
+
+MMAR (Multi-Model / Multi-Rule Analysis) is responsible for **producing structured findings**
+before execution:
+
+- Model disagreements
+- Assumption conflicts
+- Missing or weak evidence
+- Structural anomalies (coordination, dependency, irreversibility)
+
+These findings are serialized (e.g., `mmar_findings.json`) and **fed into the Decision Gate**
+as a `delta_entry`.
+
+The gate itself remains simple.
+**Intelligence lives upstream; enforcement lives here.**
 
 # Decision-OS Paper (V4–V9)
 
