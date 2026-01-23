@@ -124,22 +124,22 @@ jobs:
           python -m core.run_once --asof asof_pack.json --delta delta_entry.json --out decision_gate.json
           echo "--- decision_gate.json ---"
           cat decision_gate.json
-          
+
       - name: Enforce CI by severity (BLOCK => exit 1)
         shell: bash
         run: |
           set -euo pipefail
 
-          python - <<'PY'
-          import json, os, sys
+          SEV="$(python - <<'PY'
+          import json
           with open("decision_gate.json","r",encoding="utf-8") as f:
             data = json.load(f)
           sev = (data.get("severity") or "").upper().strip() or "BLOCK"
-          print(f"[gate] severity = {sev}")
-          # export for bash
-          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
-            env.write(f"SEV={sev}\n")
+          print(sev)
           PY
+          )"
+
+          echo "[gate] severity = ${SEV}"
 
           # Only fail CI on push. Manual runs (workflow_dispatch) should still upload artifacts.
           if [ "${{ github.event_name }}" = "push" ] && [ "${SEV}" = "BLOCK" ]; then
