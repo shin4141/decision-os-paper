@@ -133,6 +133,54 @@ jobs:
               }
             }
 
+          elif scenario == "phish_delay":
+            delta = {
+              "delta_id": "demo-phish-delay",
+              "summary": "phish_delay (domain mismatch suspect)",
+              "request": "a link looks suspicious; require evidence before signing",
+              "impact": { "externality": "high", "irreversibility": "high" },
+              "evidence": [],
+              "web": {
+                "url": "https://uniswap-airdrop.example.com",
+                "claimed_brand": "Uniswap",
+                "official_domains": ["uniswap.org"],
+                "referrer": "X/Twitter"
+              }
+            }
+
+          elif scenario == "allowlist_block":
+            delta = {
+              "delta_id": "demo-allowlist-block",
+              "summary": "allowlist_block (unknown recipient)",
+              "request": "transfer to a new address not in allowlist",
+              "impact": { "externality": "high", "irreversibility": "high" },
+              "evidence": [],
+              "transfer": {
+                "chain": "Ethereum",
+                "asset": "USDC",
+                "to": "0x1111111111111111111111111111111111111111",
+                "amount": "5000"
+              },
+              "allowlist": {
+                "mode": "ALLOWLIST_ONLY",
+                "addresses": ["0x2222222222222222222222222222222222222222"]
+              }
+            }
+
+          elif scenario == "secrets_block":
+            delta = {
+              "delta_id": "demo-secrets-block",
+              "summary": "secrets_block (token/key leak suspect)",
+              "request": "a secret-like string is about to be published",
+              "impact": { "externality": "high", "irreversibility": "high" },
+              "evidence": [],
+              "secrets": {
+                "channel": "github_issue",
+                "pattern": "looks_like_api_key",
+                "sample": "sk-live-xxxxxxxxxxxxxxxx"
+              }
+            }
+
           else:
             delta = {
               "delta_id": "demo-pass",
