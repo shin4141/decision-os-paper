@@ -1,8 +1,6 @@
 ![Decision Gate](https://github.com/shin4141/decision-os-paper/actions/workflows/decision-gate.yml/badge.svg)
 
-**Decision Gate demo (Actions):** Run workflow → `scenario=pass` (green) / `scenario=block` (red).  
-Generates `decision_gate.json` via `mmar-l0-core` and enforces PASS/DELAY/BLOCK in CI.
-Output includes `reason_codes`, `evidence_paths`, and `suggested_fix` in `decision_gate.json` (Artifacts).
+**Decision Gate demo (Actions)**: Run the workflow with scenario=pass (green), scenario=delay (yellow), or scenario=block (red). Crypto-style demos are available via scenario=crypto_delay and scenario=crypto_block.
 
 **Crypto example** (wallet signing / approvals): If a signing/approval request (Approve/Permit) has no evidence (e.g., screenshot/log/target URL/revoke note), the gate returns DELAY. If it is high externality × high irreversibility with no evidence, it returns BLOCK. Check decision_gate.json in GitHub Actions Artifacts.
 
