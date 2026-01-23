@@ -154,21 +154,29 @@ jobs:
           export PYTHONPATH="${GITHUB_WORKSPACE}/mmar-l0-core:${PYTHONPATH:-}"
           python -m core.run_once --asof asof_pack.json --delta delta_entry.json --out decision_gate.json
 
-      - name: Annotate decision_gate.json (crypto reason codes)
+      - name: Annotate decision_gate.json (crypto + coordination reason codes)
         shell: bash
         run: |
           set -euo pipefail
           python - <<'PY'
-          import json
+          import json, os
 
-          with open("delta_entry.json","r",encoding="utf-8") as f:
-            delta = json.load(f)
-          with open("decision_gate.json","r",encoding="utf-8") as f:
-            gate = json.load(f)
+          def load_json(path, default=None):
+            try:
+              with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+            except FileNotFoundError:
+              return default if default is not None else {}
+          
+          delta = load_json("delta_entry.json", {})
+          gate  = load_json("decision_gate.json", {})
+          th    = load_json("thresholds.json", {"coordination":{"delay_score":3,"block_score":5,"top10_pct_delay":40,"top10_pct_block":60}})
+          th_c  = th.get("coordination") or {}
 
           sev = (gate.get("severity") or "").upper().strip()
           reasons = list(gate.get("reason_codes") or [])
 
+          # --- Crypto annotations (existing) ---
           crypto = delta.get("crypto") or {}
           action = (crypto.get("action") or "").upper().strip()
           amount = (crypto.get("amount") or "").lower().strip()
@@ -179,11 +187,8 @@ jobs:
 
           if crypto:
             reasons.append("CRYPTO_CONTEXT")
-
-            # Always add a helpful hint if it's an unlimited approval pattern
-            if action == "APPROVE" and amount in ("unlimited", "infinite", "max", "uint256max"):
+            if action == "APPROVE" and amount in ("unlimited","infinite","max","uint256max"):
               reasons.append("APPROVAL_UNLIMITED_ALLOWANCE")
-
             if sev in ("DELAY","BLOCK"):
               if sev == "DELAY" and not evidence:
                 if action == "SIGN":
@@ -192,16 +197,39 @@ jobs:
                   reasons.append("APPROVAL_RISK_NO_EVIDENCE")
                 else:
                   reasons.append("CRYPTO_ACTION_NO_EVIDENCE")
-
               if sev == "BLOCK" and not evidence and ext == "high" and irr == "high":
                 if action == "APPROVE":
                   reasons.append("TX_APPROVAL_HIGH_X_HIGH_NO_EVIDENCE")
                 else:
                   reasons.append("CRYPTO_HIGH_X_HIGH_NO_EVIDENCE")
 
+          # --- Coordination / distribution annotations (new) ---
+          dist = delta.get("distribution") or {}
+          if dist:
+            reasons.append("DISTRIBUTION_CONTEXT")
+            holders = int(dist.get("holders") or 0)
+            top10   = float(dist.get("top10_pct") or 0)
+            snipers = float(dist.get("snipers_pct") or 0)
+            bundlers= float(dist.get("bundlers_pct") or 0)
+            none_sold = bool(dist.get("snipers_none_sold") or False)
+
+            # Simple coordination score (0..)
+            score = 0
+            if top10 >= th_c.get("top10_pct_delay", 40): score += 1
+            if (snipers + bundlers) >= 40: score += 1
+            if none_sold: score += 1
+            if holders and holders <= 80: score += 1
+            if top10 >= th_c.get("top10_pct_block", 60): score += 1
+
+            reasons.append(f"COORDINATION_SCORE_{score}")
+
+            if score >= th_c.get("block_score", 5):
+              reasons.append("COORDINATION_EXTREME_SKIP")
+            elif score >= th_c.get("delay_score", 3):
+              reasons.append("COORDINATION_HIGH_RECHECK")
+
           # de-dup preserving order
-          seen = set()
-          out = []
+          seen, out = set(), []
           for r in reasons:
             if r and r not in seen:
               seen.add(r)
