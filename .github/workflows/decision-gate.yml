@@ -60,25 +60,43 @@ jobs:
             "ssot": { "repo": "decision-os-paper", "ref": "github.sha" }
           }
 
-          if scenario == "block":
+          if scenario in ("block", "crypto_block"):
             # AUTO-BLOCK: high x high + no evidence
             delta = {
               "delta_id": "demo-auto-block",
-              "summary": "auto block (high x high, no evidence)",
+              "summary": f"{scenario} (high x high, no evidence)",
               "request": "abstract placeholder",
               "impact": { "externality": "high", "irreversibility": "high" },
               "evidence": []
             }
+            if scenario == "crypto_block":
+              delta["request"] = "wallet approval (Approve/Permit) requested"
+              delta["crypto"] = {
+                "action": "APPROVE",
+                "chain": "Ethereum",
+                "asset": "USDC",
+                "spender_or_to": "0x0000000000000000000000000000000000000000",
+                "amount": "unlimited"
+              }
 
-          elif scenario == "delay":
+          elif scenario in ("delay", "crypto_delay"):
             # AUTO-DELAY: no evidence, but not high x high
             delta = {
               "delta_id": "demo-auto-delay",
-              "summary": "auto delay (no evidence)",
+              "summary": f"{scenario} (no evidence)",
               "request": "needs recheck",
               "impact": { "externality": "low", "irreversibility": "low" },
               "evidence": []
             }
+            if scenario == "crypto_delay":
+              delta["request"] = "wallet signing requested (needs evidence before proceeding)"
+              delta["crypto"] = {
+                "action": "SIGN",
+                "chain": "Ethereum",
+                "asset": "N/A",
+                "spender_or_to": "N/A",
+                "amount": "N/A"
+              }
 
           else:
             # PASS: evidence exists
