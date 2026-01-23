@@ -4,11 +4,18 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
-    inputs:
-      scenario:
-        description: "gate scenario (pass | delay | block)"
-        required: true
-        default: "pass"
+  inputs:
+    scenario:
+      type: choice
+      description: "gate scenario"
+      required: true
+      default: pass
+      options:
+        - pass
+        - delay
+        - block
+        - crypto_delay
+        - crypto_block
 
 permissions:
   contents: read
