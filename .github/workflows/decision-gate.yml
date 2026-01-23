@@ -125,6 +125,64 @@ jobs:
           echo "--- decision_gate.json ---"
           cat decision_gate.json
 
+      - name: Annotate decision_gate.json (crypto reason codes)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+
+          # Load inputs + output
+          with open("delta_entry.json","r",encoding="utf-8") as f:
+            delta = json.load(f)
+          with open("decision_gate.json","r",encoding="utf-8") as f:
+            gate = json.load(f)
+
+          sev = (gate.get("severity") or "").upper().strip()
+          reasons = list(gate.get("reason_codes") or [])
+
+          crypto = delta.get("crypto") or {}
+          action = (crypto.get("action") or "").upper().strip()
+          evidence = delta.get("evidence") or []
+          impact = delta.get("impact") or {}
+          ext = (impact.get("externality") or "").lower()
+          irr = (impact.get("irreversibility") or "").lower()
+
+          if crypto and sev in ("DELAY","BLOCK"):
+            if "CRYPTO_CONTEXT" not in reasons:
+              reasons.append("CRYPTO_CONTEXT")
+
+            # Domain-specific reason codes
+            if sev == "DELAY" and not evidence:
+              if action == "SIGN":
+                reasons.append("SIGNATURE_RISK_NO_EVIDENCE")
+              elif action == "APPROVE":
+                reasons.append("APPROVAL_RISK_NO_EVIDENCE")
+              else:
+                reasons.append("CRYPTO_ACTION_NO_EVIDENCE")
+
+            if sev == "BLOCK" and not evidence and ext == "high" and irr == "high":
+              if action == "APPROVE":
+                reasons.append("TX_APPROVAL_HIGH_X_HIGH_NO_EVIDENCE")
+              else:
+                reasons.append("CRYPTO_HIGH_X_HIGH_NO_EVIDENCE")
+
+          # de-dup preserving order
+          seen = set()
+          reasons2 = []
+          for r in reasons:
+            if r not in seen:
+              seen.add(r)
+              reasons2.append(r)
+
+          gate["reason_codes"] = reasons2
+
+          with open("decision_gate.json","w",encoding="utf-8") as f:
+            json.dump(gate, f, ensure_ascii=False, indent=2)
+
+          print("[gate] annotated reason_codes =", reasons2)
+          PY
+
       - name: Enforce CI by severity (BLOCK => exit 1)
         shell: bash
         run: |
