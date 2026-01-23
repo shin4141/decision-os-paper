@@ -1,0 +1,8 @@
+{
+  "coordination": {
+    "delay_score": 3,
+    "block_score": 5,
+    "top10_pct_delay": 40,
+    "top10_pct_block": 60
+  }
+}
