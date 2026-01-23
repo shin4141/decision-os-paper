@@ -63,7 +63,6 @@ jobs:
           }
 
           if scenario in ("block", "crypto_block"):
-            # AUTO-BLOCK: high x high + no evidence
             delta = {
               "delta_id": "demo-auto-block",
               "summary": f"{scenario} (high x high, no evidence)",
@@ -82,7 +81,6 @@ jobs:
               }
 
           elif scenario in ("delay", "crypto_delay"):
-            # AUTO-DELAY: no evidence, but not high x high
             delta = {
               "delta_id": "demo-auto-delay",
               "summary": f"{scenario} (no evidence)",
@@ -100,8 +98,39 @@ jobs:
                 "amount": "N/A"
               }
 
+          elif scenario == "coord_delay":
+            delta = {
+              "delta_id": "demo-coord-delay",
+              "summary": "coord_delay (distribution suspicious-ish)",
+              "request": "consider skipping if coordination is high",
+              "impact": { "externality": "medium", "irreversibility": "medium" },
+              "evidence": [],
+              "distribution": {
+                "holders": 120,
+                "top10_pct": 45,
+                "snipers_pct": 25,
+                "bundlers_pct": 15,
+                "snipers_none_sold": True
+              }
+            }
+
+          elif scenario == "coord_block":
+            delta = {
+              "delta_id": "demo-coord-block",
+              "summary": "coord_block (distribution very suspicious)",
+              "request": "skip: coordinated control suspected",
+              "impact": { "externality": "high", "irreversibility": "high" },
+              "evidence": [],
+              "distribution": {
+                "holders": 60,
+                "top10_pct": 70,
+                "snipers_pct": 35,
+                "bundlers_pct": 30,
+                "snipers_none_sold": True
+              }
+            }
+
           else:
-            # PASS: evidence exists
             delta = {
               "delta_id": "demo-pass",
               "summary": "pass (has evidence)",
