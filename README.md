@@ -4,7 +4,7 @@
 Generates `decision_gate.json` via `mmar-l0-core` and enforces PASS/DELAY/BLOCK in CI.
 Output includes `reason_codes`, `evidence_paths`, and `suggested_fix` in `decision_gate.json` (Artifacts).
 
-Crypto example (wallet signing / approvals): If a signing/approval request (Approve/Permit) has no evidence (e.g., screenshot/log/target URL/revoke note), the gate returns DELAY. If it is high externality × high irreversibility with no evidence, it returns BLOCK. Check decision_gate.json in GitHub Actions Artifacts.
+**Crypto example** (wallet signing / approvals): If a signing/approval request (Approve/Permit) has no evidence (e.g., screenshot/log/target URL/revoke note), the gate returns DELAY. If it is high externality × high irreversibility with no evidence, it returns BLOCK. Check decision_gate.json in GitHub Actions Artifacts.
 
 ## Quick demo
 1) Actions → Decision Gate (B-min penetration) → Run workflow  
