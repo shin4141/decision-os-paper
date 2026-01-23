@@ -8,7 +8,7 @@ Output includes `reason_codes`, `evidence_paths`, and `suggested_fix` in `decisi
 
 ## Quick demo
 1) Actions → Decision Gate (B-min penetration) → Run workflow  
-2) scenario=pass → green / scenario=block → red  
+2) scenario=pass → green / scenario=delay → yellow / scenario=block → red
 3) Download artifact: run page → Artifacts → `decision_gate` (contains `decision_gate.json`)
 
 # Decision-OS Paper (V4–V9)
