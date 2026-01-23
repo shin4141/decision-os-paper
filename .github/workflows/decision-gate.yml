@@ -227,21 +227,26 @@ jobs:
           sev = (gate.get("severity") or "").upper().strip() or "PASS"
           reasons = list(gate.get("reason_codes") or [])
 
+          def rank(s):
+            return {"PASS":0,"DELAY":1,"BLOCK":2}.get(s, 0)
+
+          def set_sev(new_sev, suggested_fix=None, recheck=None, until=None):
+            nonlocal_vars["sev"] = new_sev
+            if suggested_fix is not None:
+              gate["suggested_fix"] = suggested_fix
+            if recheck is not None:
+              gate["recheck"] = recheck
+            if until is not None:
+              gate["until"] = until
+            gate["next_action"] = None if new_sev == "BLOCK" else "RERUN_AFTER_UNTIL"
+
+          # Python trick: emulate "nonlocal" safely without nested scopes
+          nonlocal_vars = {"sev": sev}
+
           evidence = delta.get("evidence") or []
           impact = delta.get("impact") or {}
           ext = (impact.get("externality") or "").lower()
           irr = (impact.get("irreversibility") or "").lower()
-
-          def override(new_sev, suggested_fix=None, recheck=None, until=None):
-            nonlocal sev
-            # precedence: BLOCK > DELAY > PASS
-            rank = {"PASS":0,"DELAY":1,"BLOCK":2}
-            if rank.get(new_sev,0) > rank.get(sev,0):
-              sev = new_sev
-              if suggested_fix is not None: gate["suggested_fix"] = suggested_fix
-              if recheck is not None: gate["recheck"] = recheck
-              if until is not None: gate["until"] = until
-              gate["next_action"] = None if new_sev == "BLOCK" else "RERUN_AFTER_UNTIL"
 
           # --- Crypto pack ---
           crypto = delta.get("crypto") or {}
@@ -274,20 +279,23 @@ jobs:
 
             if score >= th_c.get("block_score", 5):
               reasons.append("COORDINATION_EXTREME_SKIP")
-              override("BLOCK", suggested_fix=["Skip this token (coordination suspected)."])
+              if rank("BLOCK") > rank(nonlocal_vars["sev"]):
+                set_sev("BLOCK", suggested_fix=["Skip this token (coordination suspected)."])
             elif score >= th_c.get("delay_score", 3):
               reasons.append("COORDINATION_HIGH_RECHECK")
-              override("DELAY",
-                       suggested_fix=["Attach distribution evidence and re-run. If still coordinated, skip."],
-                       recheck=["Verify distribution/snipers via independent source", "Re-run after evidence attached"],
-                       until="AUTO_SHORT_RECHECK")
+              if rank("DELAY") > rank(nonlocal_vars["sev"]):
+                set_sev(
+                  "DELAY",
+                  suggested_fix=["Attach distribution evidence and re-run. If still coordinated, skip."],
+                  recheck=["Verify distribution/snipers via independent source", "Re-run after evidence attached"],
+                  until="AUTO_SHORT_RECHECK"
+                )
 
           # --- Phishing / domain pack ---
           web = delta.get("web") or {}
           if web:
             reasons.append("WEB_CONTEXT")
             url = (web.get("url") or "").strip()
-            claimed = (web.get("claimed_brand") or "").strip()
             official = set([d.lower().strip() for d in (web.get("official_domains") or []) if d])
 
             host = ""
@@ -298,10 +306,13 @@ jobs:
 
             if official and host and all(not host.endswith(d) for d in official):
               reasons.append("DOMAIN_MISMATCH_SUSPECT")
-              override("DELAY",
-                       suggested_fix=["Use official domain only; attach evidence (official link) and re-run."],
-                       recheck=["Verify the official domain from trusted source", "Re-run after evidence attached"],
-                       until="AUTO_SHORT_RECHECK")
+              if rank("DELAY") > rank(nonlocal_vars["sev"]):
+                set_sev(
+                  "DELAY",
+                  suggested_fix=["Use official domain only; attach evidence (official link) and re-run."],
+                  recheck=["Verify the official domain from trusted source", "Re-run after evidence attached"],
+                  until="AUTO_SHORT_RECHECK"
+                )
 
           # --- Allowlist / recipient pack ---
           allow = delta.get("allowlist") or {}
@@ -314,15 +325,18 @@ jobs:
 
             if mode == "ALLOWLIST_ONLY" and to and to not in addresses:
               reasons.append("UNKNOWN_RECIPIENT_NOT_IN_ALLOWLIST")
-              override("BLOCK", suggested_fix=["Recipient not in allowlist. Add to allowlist only after verification."])
+              if rank("BLOCK") > rank(nonlocal_vars["sev"]):
+                set_sev("BLOCK", suggested_fix=["Recipient not in allowlist. Add only after verification."])
 
           # --- Secrets pack ---
           sec = delta.get("secrets") or {}
           if sec:
             reasons.append("SECRETS_CONTEXT")
             reasons.append("POTENTIAL_SECRET_LEAK")
-            override("BLOCK", suggested_fix=["Do not publish secrets. Rotate keys/tokens immediately and re-run after cleanup."])
+            if rank("BLOCK") > rank(nonlocal_vars["sev"]):
+              set_sev("BLOCK", suggested_fix=["Do not publish secrets. Rotate keys/tokens and re-run after cleanup."])
 
+          sev = nonlocal_vars["sev"]
           gate["severity"] = sev
 
           # de-dup preserving order
