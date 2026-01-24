@@ -25,6 +25,13 @@ Each policy emits:
 
 **Decision Gate demo (Actions)**: Run the workflow with scenario=pass (green), scenario=delay (yellow), or scenario=block (red). Crypto-style demos are available via scenario=crypto_delay and scenario=crypto_block.
 
+## Contracts (Schema)
+- `decision_gate.json` schema: https://github.com/shin4141/mmar-l0-core/blob/main/schema/decision_gate.schema.json
+- `mmar_findings.json` schema: https://github.com/shin4141/mmar-l0-core/blob/main/schema/mmar_findings.schema.json
+
+Note: Schemas are canonical in `mmar-l0-core`. This gateway repo links to them (no duplication).
+
+
 **Crypto example** (wallet signing / approvals): If a signing/approval request (Approve/Permit) has no evidence (e.g., screenshot/log/target URL/revoke note), the gate returns DELAY. If it is high externality × high irreversibility with no evidence, it returns BLOCK. Check decision_gate.json in GitHub Actions Artifacts.
 
 **Where to get** decision_gate.json: Open the latest “Decision Gate” run page, then scroll to the Artifacts section (download decision_gate.zip and open decision_gate.json). (Not the log output.)
