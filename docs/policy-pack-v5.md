@@ -26,4 +26,4 @@ Schemas are canonical in `mmar-l0-core`:
 - mmar_findings schema: https://github.com/shin4141/mmar-l0-core/blob/main/schema/mmar_findings.schema.json
 
 ## Adoption (GitHub Actions)
-See: `docs/adoption-github-actions.md` (to be added)
+See: `docs/adoption-github-actions.md` 
