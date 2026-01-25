@@ -34,6 +34,12 @@ Note: Schemas are canonical in `mmar-l0-core`. This gateway repo links to them (
 ## Local (30s)
 Run the minimal gate locally (canonical engine): https://github.com/shin4141/mmar-l0-core
 
+---
+
+## Examples
+
+### Crypto example (wallet signing / approvals)
+
 **Crypto example** (wallet signing / approvals): If a signing/approval request (Approve/Permit) has no evidence (e.g., screenshot/log/target URL/revoke note), the gate returns DELAY. If it is high externality × high irreversibility with no evidence, it returns BLOCK. Check decision_gate.json in GitHub Actions Artifacts.
 
 **Where to get** decision_gate.json: Open the latest “Decision Gate” run page, then scroll to the Artifacts section (download decision_gate.zip and open decision_gate.json). (Not the log output.)
