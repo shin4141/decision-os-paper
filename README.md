@@ -30,6 +30,7 @@ Each policy emits:
 
 ![Decision Code diagram](https://github.com/user-attachments/assets/79f042e2-cb57-4f43-b1df-24cd5bb65348)
 Internal model order is untouched; control is externalized over outputs (L0→L4) with auditable artifacts.
+*Concept diagram:* Externalized control pipeline (L0→L4). Current implementation covers L0–L1; higher layers are optional extensions.
 
 ## Decision Gate demo (Actions)
 
