@@ -2,8 +2,7 @@
 
 ## What the Gate already covers (Policy Packs)
 
-The current gate implements several **policy packs** that convert detected risks
-into explicit execution decisions:
+The current gate implements several **policy packs** that convert detected risks into explicit execution decisions:
 
 - **Crypto execution risks**
   - Unlimited approvals
@@ -27,9 +26,13 @@ Each policy emits:
 - V5 Policy Pack (spec/adoption): https://github.com/shin4141/paper-public
 - Gate engine (MMAR/L0): https://github.com/shin4141/mmar-l0-core
 
-  ---
+---
 
-**Decision Gate demo (Actions)**: Run the workflow with scenario=pass (green), scenario=delay (yellow), or scenario=block (red). Crypto-style demos are available via scenario=crypto_delay and scenario=crypto_block.
+## Decision Gate demo (Actions)
+
+Run the workflow with `scenario=pass` (green), `scenario=delay` (yellow), or `scenario=block` (red).  
+Crypto-style demos are available via `scenario=crypto_delay` and `scenario=crypto_block`.
+
 
 ## Contracts (Schema)
 - `decision_gate.json` schema: https://github.com/shin4141/mmar-l0-core/blob/main/schema/decision_gate.schema.json
