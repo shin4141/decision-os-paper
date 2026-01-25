@@ -1,5 +1,12 @@
 ![Decision Gate](https://github.com/shin4141/decision-os-paper/actions/workflows/decision-gate.yml/badge.svg)
 
+## Docs
+
+- V5 Policy Pack (spec/adoption): https://github.com/shin4141/paper-public
+- Gate engine (MMAR/L0): https://github.com/shin4141/mmar-l0-core
+
+---
+
 ## What the Gate already covers (Policy Packs)
 
 The current gate implements several **policy packs** that convert detected risks
