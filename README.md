@@ -28,7 +28,8 @@ Each policy emits:
 
 ---
 
-http<img width="8191" height="1881" alt="Untitled diagram-2026-01-25-135118" src="https://github.com/user-attachments/assets/79f042e2-cb57-4f43-b1df-24cd5bb65348" /
+![Decision Code diagram](https://github.com/user-attachments/assets/79f042e2-cb57-4f43-b1df-24cd5bb65348)
+Internal model order is untouched; control is externalized over outputs (L0→L4) with auditable artifacts.
 
 ## Decision Gate demo (Actions)
 
