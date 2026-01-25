@@ -23,7 +23,7 @@ Each policy emits:
 - `severity` (`PASS | DELAY | BLOCK`)
 - `recheck` and `suggested_fix` when applicable
 
-  ## Docs
+## Docs
 - V5 Policy Pack (spec/adoption): https://github.com/shin4141/paper-public
 - Gate engine (MMAR/L0): https://github.com/shin4141/mmar-l0-core
 
