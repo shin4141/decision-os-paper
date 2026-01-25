@@ -28,6 +28,8 @@ Each policy emits:
 
 ---
 
+http<img width="8191" height="1881" alt="Untitled diagram-2026-01-25-135118" src="https://github.com/user-attachments/assets/79f042e2-cb57-4f43-b1df-24cd5bb65348" /
+
 ## Decision Gate demo (Actions)
 
 Run the workflow with `scenario=pass` (green), `scenario=delay` (yellow), or `scenario=block` (red).  
