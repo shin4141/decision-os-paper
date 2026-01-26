@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security / Safety report
+    url: https://github.com/shin4141/decision-os-paper/security/advisories/new
+    about: Private vulnerability reporting (recommended for sensitive issues)
