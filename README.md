@@ -57,7 +57,7 @@ Run the minimal gate locally (canonical engine): https://github.com/shin4141/mma
 ### Where to get `decision_gate.json`
 Actions → latest “Decision Gate” run → Artifacts → download `decision_gate.zip` → open `decision_gate.json` (not logs).
 
-##　Decision Gate demo (Actions)
+## Decision Gate demo (Actions)
 Run the workflow with scenario=pass (green), scenario=delay (yellow), or scenario=block (red).
 Crypto-style demos are available via scenario=crypto_delay and scenario=crypto_block.
 
