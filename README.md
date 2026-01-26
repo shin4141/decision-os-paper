@@ -57,10 +57,19 @@ Run the minimal gate locally (canonical engine): https://github.com/shin4141/mma
 ### Where to get `decision_gate.json`
 Actions → latest “Decision Gate” run → Artifacts → download `decision_gate.zip` → open `decision_gate.json` (not logs).
 
-## Quick demo
-1) Actions → Decision Gate (B-min penetration) → Run workflow  
-2) scenario=pass → green / scenario=delay → yellow / scenario=block → red
-3) Download artifact: run page → Artifacts → `decision_gate` (contains `decision_gate.json`)
+##　Decision Gate demo (Actions)
+Run the workflow with scenario=pass (green), scenario=delay (yellow), or scenario=block (red).
+Crypto-style demos are available via scenario=crypto_delay and scenario=crypto_block.
+
+Try (view-only, no permissions)
+You can view runs and download artifacts without running anything.
+
+Run it yourself (interactive demo)
+If you don’t see the “Run workflow” button, you don’t have write access on this repo.
+Fork the repo and run the workflow on your fork (Actions → Run workflow).
+
+Download artifact (decision_gate.json)
+Run page → Artifacts → decision_gate (contains decision_gate.json)
 
 Note (badge): The workflow badge reflects the latest run on main. After running scenario=delay or scenario=block for the demo, run scenario=pass once to restore the badge to green.
 
