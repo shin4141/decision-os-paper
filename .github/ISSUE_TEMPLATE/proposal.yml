@@ -1,0 +1,19 @@
+name: Proposal
+description: Suggest an improvement
+title: "[Proposal] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal (1 line)
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why / context
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
