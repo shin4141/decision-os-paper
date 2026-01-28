@@ -1,13 +1,11 @@
 ![Decision Gate](https://github.com/shin4141/decision-os-paper/actions/workflows/decision-gate.yml/badge.svg)
 
-
 https://github.com/user-attachments/assets/2a3dc664-d918-442e-93d4-aa9142a3e9b0
 
-
-[![Public Tube (p,n) demo](assets/public_tube_thumbnail.png)](assets/public_tube_p_curve_caption_only.mp4)
-
 **From snapshots to trajectories.**  
-Low p becomes near-certain as n grows — this is why we gate repetition.
+Public release is a Public Tube: even small p becomes near-certain as n grows — this is why the Gate outputs **PASS / DELAY / BLOCK**.
+
+▶ Demo (run in minutes): **GitHub Actions → Artifacts → `decision_gate.json`**
 
 ## What the Gate already covers (Policy Packs)
 
