@@ -7,6 +7,12 @@ Public release is a Public Tube: even small p becomes near-certain as n grows �
 
 ▶ Demo (run in minutes): **GitHub Actions → Artifacts → `decision_gate.json`**
 
+## Run (SiriusA Gate)
+- Core: https://github.com/shin4141/siriusA-core
+- Quick demo (PASS/DELAY):
+  - `python cli.py examples/decision_request_pass.json`
+  - `python cli.py examples/decision_request_delay.json`
+
 ## What the Gate already covers (Policy Packs)
 
 The current gate implements several **policy packs** that convert detected risks into explicit execution decisions:
