@@ -1,5 +1,10 @@
 ![Decision Gate](https://github.com/shin4141/decision-os-paper/actions/workflows/decision-gate.yml/badge.svg)
 
+[![Public Tube (p,n) demo](assets/public_tube_thumbnail.png)](assets/public_tube_p_curve_caption_only.mp4)
+
+**From snapshots to trajectories.**  
+Low p becomes near-certain as n grows — this is why we gate repetition.
+
 ## What the Gate already covers (Policy Packs)
 
 The current gate implements several **policy packs** that convert detected risks into explicit execution decisions:
