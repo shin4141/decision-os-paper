@@ -21,3 +21,5 @@ for real-world, high-stakes actions.
 ## Disclosure boundary
 This addendum is intended to be **reproducible** without disclosing private calibration
 or personal thresholds.
+
+DOI (Zenodo): 10.5281/zenodo.18469000
