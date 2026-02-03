@@ -14,8 +14,9 @@ for real-world, high-stakes actions.
 4. If uncertain or unverifiable → **HOLD** and list missing evidence.
 
 ## Files
-- `v4-addendum.pdf` (main PDF)
-- (optional) `onepager.md` (1-page overview for fast entry)
+- `Decision_OS_V4_Addendum_Grounded_Decision_Protocol_V5_Compatible_Guard.pdf` — Main PDF
+- `MEMORY.md` — Machine-usable memory card (EN, canonical)
+- `MEMORY_JA.md` — 機械可読メモリー（日本語版）
 
 ## Disclosure boundary
 This addendum is intended to be **reproducible** without disclosing private calibration
