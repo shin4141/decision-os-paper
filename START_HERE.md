@@ -18,3 +18,12 @@ Below is an example of the gate outcome as an auditable artifact:
 
 ## If you want the supporting layer (optional)
 MMAR logs disagreement / structural signals as audit residue.
+
+## Collaboration / licensing (bounded)
+- Open to licensing / local partnership (bounded scope).
+- Q&A is limited (one session); ongoing support requires an agreement.
+- Public use must include attribution (“Decision-OS / Shin”).
+
+- ローカル出願/導入の相談は可能（範囲は限定）。
+- Q&Aは原則1回まで。継続支援は契約ベース。
+- 公開物にはクレジット（Decision-OS / Shin）明記。
