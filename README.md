@@ -115,6 +115,32 @@ Canonical artifacts are hosted on **Zenodo (DOI)**; GitHub is used for **indexin
 
 Decision-OS has **two entry paths**. Pick the one that matches your interest.
 
+## Decision-OS Series Map
+
+Decision-OS is a structural research series on long-run human–AI decision, safety, and self-recursive intelligence.
+
+### Recommended entry
+- If reading only one short piece: start with **V5 Addendum**
+- If reading the practical safety line: start with **V5**
+- If reading the AGI/control line: start with **V8 (v2)**
+
+### Core lineage
+- **V4** — action selection under value: what to do
+- **V5** — Guard / SiriusA: what must not be violated
+- **V6** — PIC: how updates merge without rupture
+- **V7** — AGI door: when self-recursion is structurally admissible
+- **V8** — Time-Tube: how public release/control scales over time
+- **V9** — Impact-Weighted Release: release discipline and exposure weighting
+
+### Supplements
+- **V5 Addendum** — adoption gate / hold-first auditing
+- **V6 Addendum** — verification note for PIC
+- **V7 Addendum** — why Aspire and why PIC
+
+### Latest orientation
+- Latest gateway framing: **V8 (v2)**
+- Latest AGI definition line: **V7 + V7 Addendum**
+
 **Citation:** Citation (quick)
 - Implementation: cite V5 (SiriusA)
 - Adoption gate entry: cite V5 Addendum (0.3)
