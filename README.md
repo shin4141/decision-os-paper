@@ -14,6 +14,8 @@ Decision-OS is a structural research series on long-run human–AI decision, saf
 - If reading the mathematical core: start with **V6**
 - If reading release / exposure / real-world friction: start with **V9**
 
+Decision-OS is not a collection of unrelated papers. It is a single series that revisits the same central problem from different structural layers: how to keep human–AI decision-making coherent, safe, and durable over time.
+
 ### Core lineage
 - **V4** — action selection under value: what to do
 - **V5** — Guard / SiriusA: what must not be violated
