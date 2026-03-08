@@ -11,7 +11,8 @@ Decision-OS is a structural research series on long-run human–AI decision, saf
 ### Recommended entry
 - If reading only one short piece: start with **V5 Addendum**
 - If reading the practical safety line: start with **V5**
-- If reading the AGI/control line: start with **V8 (v2)**
+- If reading the mathematical core: start with **V6**
+- If reading release / exposure / real-world friction: start with **V9**
 
 ### Core lineage
 - **V4** — action selection under value: what to do
@@ -19,7 +20,7 @@ Decision-OS is a structural research series on long-run human–AI decision, saf
 - **V6** — PIC: how updates merge without rupture
 - **V7** — AGI door: when self-recursion is structurally admissible
 - **V8** — Time-Tube: long-term control conditions for self-safe AGI
-- **V9** — Impact-Weighted Release: release discipline and exposure weighting
+- **V9** — Impact-Weighted Release: release discipline under unequal impact
 
 ### Supplements
 - **V5 Addendum** — adoption gate / hold-first auditing
@@ -29,6 +30,7 @@ Decision-OS is a structural research series on long-run human–AI decision, saf
 ### Latest orientation
 - Latest gateway framing: **V8 (v2)**
 - Latest AGI definition line: **V7 + V7 Addendum**
+- Latest release/governance line: **V9**
 
 **Citation:** Citation (quick)
 - Implementation: cite V5 (SiriusA)
