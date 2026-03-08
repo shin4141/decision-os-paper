@@ -1,5 +1,106 @@
 ![Decision Gate](https://github.com/shin4141/decision-os-paper/actions/workflows/decision-gate.yml/badge.svg)
 
+## Start here (Gateway)
+
+Decision-OS has **two entry paths**. Pick the one that matches your interest.
+
+## Decision-OS Series Map
+
+Decision-OS is a structural research series on long-run human–AI decision, safety, and self-recursive intelligence.
+
+### Recommended entry
+- If reading only one short piece: start with **V5 Addendum**
+- If reading the practical safety line: start with **V5**
+- If reading the AGI/control line: start with **V8 (v2)**
+
+### Core lineage
+- **V4** — action selection under value: what to do
+- **V5** — Guard / SiriusA: what must not be violated
+- **V6** — PIC: how updates merge without rupture
+- **V7** — AGI door: when self-recursion is structurally admissible
+- **V8** — Time-Tube: how public release/control scales over time
+- **V9** — Impact-Weighted Release: release discipline and exposure weighting
+
+### Supplements
+- **V5 Addendum** — adoption gate / hold-first auditing
+- **V6 Addendum** — verification note for PIC
+- **V7 Addendum** — why Aspire and why PIC
+
+### Latest orientation
+- Latest gateway framing: **V8 (v2)**
+- Latest AGI definition line: **V7 + V7 Addendum**
+
+**Citation:** Citation (quick)
+- Implementation: cite V5 (SiriusA)
+- Adoption gate entry: cite V5 Addendum (0.3)
+- Control/gateway framing: cite V8 v2 (Time-Tube)
+- Implementation (MMAR / L0 core): https://github.com/shin4141/mmar-l0-core
+ (CI + schema contract)
+
+
+### A) Practical Safety / Implementation (Real-world)
+Quick entry (3 short addenda, links only)
+- V5 Addendum (0.3) — SiriusA Adoption Gate (state machine + HOLD(evidence) + five-line contract)
+  https://doi.org/10.5281/zenodo.18252623
+- V6 Addendum (1p) — Verification Note for PIC (evaluation hooks; falsifiable protocol)
+  https://doi.org/10.5281/zenodo.18240015
+- V7 Addendum (0.3) — Why Aspire and Why PIC (minimal necessity)
+  https://doi.org/10.5281/zenodo.18220351
+
+(If you only read one: start with V5 Addendum.)
+
+**Start with V5** — ZK-backed approval, two-step confirmation, revoke window (Δt), duress-aware control.  
+- V5 — SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life  
+  https://zenodo.org/records/18051625
+
+**Then**: V6 → V8 (conceptual expansion)
+
+### B) AGI Theory / Control (Series overview)
+**Start with V8 (v2)** — series gateway framing (Time-as-an-Ally, control structure).  
+- V8 (v2) — Time-Tube Control for Self-Safe AGI  
+  https://zenodo.org/records/18137204  
+  Concept DOI (all versions): 10.5281/zenodo.17970577  
+  SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
+
+**Then**: V6 (PIC) → V7 → (back to V5 for implementation details)
+
+---
+
+## Series Index (Zenodo)
+
+- **V4** — Polaris-Origin: An Entry OS for Seeing Structure with AI  
+  https://doi.org/10.5281/zenodo.17905930
+
+- **V5** — SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life  
+  https://doi.org/10.5281/zenodo.18051625
+
+- **V5 Addendum (0.3)** — SiriusA Adoption Gate: Hold-First Auditing for Irreversible Actions (Supplement; adoption fit check, state machine, evidence bundle)  
+  https://doi.org/10.5281/zenodo.18252623
+
+- **V6** — (PIC) Canonical Memory Architecture for Self-Recursive Intelligence  
+  https://doi.org/10.5281/zenodo.17717518
+
+- **V6 Addendum (Verification Note, 1p)** — Evaluation Hooks for PIC (Supplement; evaluation hooks, protocol, falsify)  
+  https://doi.org/10.5281/zenodo.18240015
+
+- **V7** — Aspire Intelligence for AGI: An Operational and Self-Recursive Structural Definition of AGI (A×G×I)  
+  https://doi.org/10.5281/zenodo.17932554
+
+- **V7 Addendum (0.3)** — Why Aspire and Why PIC (Supplement; minimal necessity of Aspire and PIC)  
+  https://doi.org/10.5281/zenodo.18220351
+
+- **V8 (v2)** — Time-Tube Control for Self-Safe AGI  
+  https://doi.org/10.5281/zenodo.18137204  
+  Concept DOI (all versions): https://doi.org/10.5281/zenodo.17970577  
+  SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
+
+- **V9 (v1, JP)** — Impact-Weighted Release (Japanese Edition)<br>
+  https://doi.org/10.5281/zenodo.18321009<br>
+  Concept DOI (all versions): https://doi.org/10.5281/zenodo.18321008
+
+
+---
+
 https://github.com/user-attachments/assets/2a3dc664-d918-442e-93d4-aa9142a3e9b0
 
 **From snapshots to trajectories.**  
@@ -108,107 +209,6 @@ The gate itself remains simple.
 
 This repository is the **public gateway** for the Decision-OS series.  
 Canonical artifacts are hosted on **Zenodo (DOI)**; GitHub is used for **indexing and evidence routing**.
-
----
-
-## Start here (Gateway)
-
-Decision-OS has **two entry paths**. Pick the one that matches your interest.
-
-## Decision-OS Series Map
-
-Decision-OS is a structural research series on long-run human–AI decision, safety, and self-recursive intelligence.
-
-### Recommended entry
-- If reading only one short piece: start with **V5 Addendum**
-- If reading the practical safety line: start with **V5**
-- If reading the AGI/control line: start with **V8 (v2)**
-
-### Core lineage
-- **V4** — action selection under value: what to do
-- **V5** — Guard / SiriusA: what must not be violated
-- **V6** — PIC: how updates merge without rupture
-- **V7** — AGI door: when self-recursion is structurally admissible
-- **V8** — Time-Tube: how public release/control scales over time
-- **V9** — Impact-Weighted Release: release discipline and exposure weighting
-
-### Supplements
-- **V5 Addendum** — adoption gate / hold-first auditing
-- **V6 Addendum** — verification note for PIC
-- **V7 Addendum** — why Aspire and why PIC
-
-### Latest orientation
-- Latest gateway framing: **V8 (v2)**
-- Latest AGI definition line: **V7 + V7 Addendum**
-
-**Citation:** Citation (quick)
-- Implementation: cite V5 (SiriusA)
-- Adoption gate entry: cite V5 Addendum (0.3)
-- Control/gateway framing: cite V8 v2 (Time-Tube)
-- Implementation (MMAR / L0 core): https://github.com/shin4141/mmar-l0-core
- (CI + schema contract)
-
-
-### A) Practical Safety / Implementation (Real-world)
-Quick entry (3 short addenda, links only)
-- V5 Addendum (0.3) — SiriusA Adoption Gate (state machine + HOLD(evidence) + five-line contract)
-  https://doi.org/10.5281/zenodo.18252623
-- V6 Addendum (1p) — Verification Note for PIC (evaluation hooks; falsifiable protocol)
-  https://doi.org/10.5281/zenodo.18240015
-- V7 Addendum (0.3) — Why Aspire and Why PIC (minimal necessity)
-  https://doi.org/10.5281/zenodo.18220351
-
-(If you only read one: start with V5 Addendum.)
-
-**Start with V5** — ZK-backed approval, two-step confirmation, revoke window (Δt), duress-aware control.  
-- V5 — SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life  
-  https://zenodo.org/records/18051625
-
-**Then**: V6 → V8 (conceptual expansion)
-
-### B) AGI Theory / Control (Series overview)
-**Start with V8 (v2)** — series gateway framing (Time-as-an-Ally, control structure).  
-- V8 (v2) — Time-Tube Control for Self-Safe AGI  
-  https://zenodo.org/records/18137204  
-  Concept DOI (all versions): 10.5281/zenodo.17970577  
-  SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
-
-**Then**: V6 (PIC) → V7 → (back to V5 for implementation details)
-
----
-
-## Series Index (Zenodo)
-
-- **V4** — Polaris-Origin: An Entry OS for Seeing Structure with AI  
-  https://doi.org/10.5281/zenodo.17905930
-
-- **V5** — SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life  
-  https://doi.org/10.5281/zenodo.18051625
-
-- **V5 Addendum (0.3)** — SiriusA Adoption Gate: Hold-First Auditing for Irreversible Actions (Supplement; adoption fit check, state machine, evidence bundle)  
-  https://doi.org/10.5281/zenodo.18252623
-
-- **V6** — (PIC) Canonical Memory Architecture for Self-Recursive Intelligence  
-  https://doi.org/10.5281/zenodo.17717518
-
-- **V6 Addendum (Verification Note, 1p)** — Evaluation Hooks for PIC (Supplement; evaluation hooks, protocol, falsify)  
-  https://doi.org/10.5281/zenodo.18240015
-
-- **V7** — Aspire Intelligence for AGI: An Operational and Self-Recursive Structural Definition of AGI (A×G×I)  
-  https://doi.org/10.5281/zenodo.17932554
-
-- **V7 Addendum (0.3)** — Why Aspire and Why PIC (Supplement; minimal necessity of Aspire and PIC)  
-  https://doi.org/10.5281/zenodo.18220351
-
-- **V8 (v2)** — Time-Tube Control for Self-Safe AGI  
-  https://doi.org/10.5281/zenodo.18137204  
-  Concept DOI (all versions): https://doi.org/10.5281/zenodo.17970577  
-  SSOT SHA (V8): a771021949fabf4b0ea23141863bab5f1a266e8c
-
-- **V9 (v1, JP)** — Impact-Weighted Release (Japanese Edition)<br>
-  https://doi.org/10.5281/zenodo.18321009<br>
-  Concept DOI (all versions): https://doi.org/10.5281/zenodo.18321008
-
 
 ---
 
