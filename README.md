@@ -18,7 +18,7 @@ Decision-OS is a structural research series on long-run human–AI decision, saf
 - **V5** — Guard / SiriusA: what must not be violated
 - **V6** — PIC: how updates merge without rupture
 - **V7** — AGI door: when self-recursion is structurally admissible
-- **V8** — Time-Tube: how public release/control scales over time
+- **V8** — Time-Tube: long-term control conditions for self-safe AGI
 - **V9** — Impact-Weighted Release: release discipline and exposure weighting
 
 ### Supplements
@@ -206,9 +206,6 @@ The gate itself remains simple.
 **Intelligence lives upstream; enforcement lives here.**
 
 # Decision-OS Paper (V4–V9)
-
-This repository is the **public gateway** for the Decision-OS series.  
-Canonical artifacts are hosted on **Zenodo (DOI)**; GitHub is used for **indexing and evidence routing**.
 
 ---
 
