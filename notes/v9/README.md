@@ -51,7 +51,6 @@ V9 fixed the three anchors:
 
 V9.1 preserves these anchors and adds a reuse layer:
 
-```text
 DFR → Residue Criterion → Judgment Compression → Condition-Bound Reuse
 
 A compressed judgment is stored as:
