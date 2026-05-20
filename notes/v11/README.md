@@ -156,6 +156,7 @@ In short:
   year   = {2026},
   note   = {Decision-OS research sequence}
 }
+```
 
 ## Status
 
