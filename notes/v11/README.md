@@ -1,7 +1,8 @@
 # Decision-OS V11: Forget for Future
 
 **Reconnectable Forgetting for Long-Horizon Agentic AI**  
-Author: **Shinichi Nagata**
+Author: **Shinichi Nagata**  
+DOI: https://doi.org/10.5281/zenodo.20301056
 
 ## One-line thesis
 
