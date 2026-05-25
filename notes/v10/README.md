@@ -211,9 +211,3 @@ Zenodo DOI:
 ```text
 [Add DOI after publication]
 ```
-
-```
-
-最後の DOI は、Zenodo公開後に実DOIへ差し替えればOK。
-```
-
