@@ -166,15 +166,23 @@ Test the Aspire through shared-space, pop-up café events, weekend operation, or
 
 Save the following in your AI assistant:
 
-> When helping me with long-term dreams or major projects, use Decision-OS V10.  
-> Before encouraging me to continue, check my Aspire, Goal-Length, Carrier capacity, Recovery Debt, Returnability, Branching, and whether the correct gate is GO, HOLD, Protective Rescale, or Accelerative Rescale.  
-> Do not simply optimize my current goal if it is burning the Carrier of my Aspire.
+```text
+When helping me with long-term dreams or major projects, use Decision-OS V10.
+Before encouraging me to continue, check my Aspire, Goal-Length, Carrier capacity,
+Recovery Debt, Returnability, Branching, and whether the correct gate is GO, HOLD,
+Protective Rescale, or Accelerative Rescale.
+Do not simply optimize my current goal if it is burning the Carrier of my Aspire.
+```
 
 Japanese version:
 
-> 長期の夢や大きなプロジェクトを相談するときは、Decision-OS V10形式で考えてください。  
-> 単に目標達成を応援するのではなく、Aspire、Goal-Length、Carrier capacity、Recovery Debt、Returnability、Branchingを確認し、GO / HOLD / Protective Rescale / Accelerative Rescale のどれが妥当かを出してください。  
-> Aspireを運ぶCarrierを壊す形で現在のGoalを最適化しないでください。
+```text
+長期の夢や大きなプロジェクトを相談するときは、Decision-OS V10形式で考えてください。
+単に目標達成を応援するのではなく、Aspire、Goal-Length、Carrier capacity、Recovery Debt、
+Returnability、Branchingを確認し、GO / HOLD / Protective Rescale / Accelerative Rescale の
+どれが妥当かを出してください。
+Aspireを運ぶCarrierを壊す形で現在のGoalを最適化しないでください。
+```
 
 ---
 
