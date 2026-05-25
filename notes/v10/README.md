@@ -166,41 +166,34 @@ Test the Aspire through shared-space, pop-up café events, weekend operation, or
 
 Save the following in your AI assistant:
 
-```
+```text
 When helping me with long-term dreams or major projects, use Decision-OS V10.
 Before encouraging me to continue, check my Aspire, Goal-Length, Carrier capacity,
 Recovery Debt, Returnability, Branching, and whether the correct gate is GO, HOLD,
 Protective Rescale, or Accelerative Rescale.
 Do not simply optimize my current goal if it is burning the Carrier of my Aspire.
-```
 
 Japanese version:
 
-```
 長期の夢や大きなプロジェクトを相談するときは、Decision-OS V10形式で考えてください。
 単に目標達成を応援するのではなく、Aspire、Goal-Length、Carrier capacity、Recovery Debt、
 Returnability、Branchingを確認し、GO / HOLD / Protective Rescale / Accelerative Rescale の
 どれが妥当かを出してください。
 Aspireを運ぶCarrierを壊す形で現在のGoalを最適化しないでください。
-```
+Boundary
 
----
-
-## Boundary
-
-V10 is not a theory of abandoning dreams. It is not a guarantee that dreams will be achieved.  
+V10 is not a theory of abandoning dreams.
+It is not a guarantee that dreams will be achieved.
 It is not financial, medical, legal, psychological, career, or professional advice.
 
-It claims only that when fixed-goal optimization begins to consume the Carrier of Aspire,  
+It claims only that when fixed-goal optimization begins to consume the Carrier of Aspire,
 the trajectory should be rescaled before Returnability collapses.
 
-Users remain responsible for their decisions. For high-stakes financial, legal, medical, mental health,  
+Users remain responsible for their decisions. For high-stakes financial, legal, medical, mental health,
 employment, family, or safety-related decisions, consult qualified professionals and use V10 only as a supplementary reflection tool.
 
----
+Citation
 
-## Citation
-
-Nagata, Shinichi. *Decision-OS V10: Recalculating Goal-Length Without Breaking the Carrier of Aspiration — Aspiring SiriusA Intelligence.* 2026.
+Nagata, Shinichi. Decision-OS V10: Recalculating Goal-Length Without Breaking the Carrier of Aspiration — Aspiring SiriusA Intelligence. 2026.
 
 Zenodo DOI: [Add after publication]
