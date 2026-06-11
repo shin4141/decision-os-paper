@@ -10,6 +10,20 @@ Core Canon:
 
 > Capability without controllability is not intelligence.
 
+## Read This First
+
+Start with:
+
+* `Decision-OS_V13_Research_Note_v0.2.pdf`
+
+v0.2 is the current Canon Freeze / Prototype-Bound Draft.
+
+v0.1 records the initial Compound Loop discovery.
+
+For the current prototype, see:
+
+* https://github.com/shin4141/decision-os-v13-loopkit
+
 ## Files
 
 * `Decision-OS_V13_Research_Note_v0.1.pdf`
