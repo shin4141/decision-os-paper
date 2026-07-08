@@ -4,6 +4,12 @@
 
 Decision-OS has **two entry paths**. Pick the one that matches your interest.
 
+## Research Timeline
+
+See `docs/research_timeline.md` for a chronological map of the Decision-OS / Value Dynamics papers, notes, DOI-linked releases, and reading order.
+
+This timeline helps readers understand how the series accumulated over time, without rewriting existing papers or release metadata.
+
 ## Decision-OS Series Map
 
 Decision-OS is a structural research series on long-run human–AI decision, safety, and self-recursive intelligence.
