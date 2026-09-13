@@ -3,8 +3,12 @@
 **Subtitle:** Future-Restartable Closure for Self-Evolving AI Agents  
 **Author:** Shinichi Nagata  
 **ORCID:** 0009-0005-6903-1862  
-**Status:** Pre-release manuscript / companion note  
-**Primary manuscript:** Decision-OS V12: Completion Integrity
+**Status:** Published preprint / conceptual and operational framework<br>
+**Publication:** 2026-05-25; deposited version `v2`<br>
+**Formal citation:** [DOI 20370655](https://doi.org/10.5281/zenodo.20370655)<br>
+**Primary manuscript:** [Decision-OS V12: Completion Integrity (v2 PDF)](Decision-OS_V12_Completion_Integrity_v2.pdf)
+
+The [earlier local manuscript](Decision_OS_V12__Completion_Integrity%20.pdf) is preserved separately. V2 adds Completion Context Contamination, a fresh evaluation context requirement, and `completion_context` in the proposed record. Publication does not establish peer review or full empirical validation.
 
 ## Summary
 
@@ -40,19 +44,13 @@ It is complete only when a future self can reconnect, verify, stop, correct, or 
 
 ## Companion Artifact
 
-A companion software artifact is provided separately as a minimal operational reference for Completion Integrity.
+The public [V12 Completion Integrity implementation](https://github.com/shin4141/decision-os-v12-completion-integrity) provides a Minimal Completion Record schema, CLI, PASS / DELAY / BLOCK examples, checklist, scope profiles, and CI validation. Start with its [installation guide](https://github.com/shin4141/decision-os-v12-completion-integrity/blob/main/docs/install-in-your-repo.md).
 
-It may include:
+[CI run 27920845535](https://github.com/shin4141/decision-os-v12-completion-integrity/actions/runs/27920845535) succeeded at commit `be1b3f70128d67e642d288c2bab9b53719720c37`. The [fixed workflow](https://github.com/shin4141/decision-os-v12-completion-integrity/blob/be1b3f70128d67e642d288c2bab9b53719720c37/.github/workflows/validate.yml) checks nine example records and declared/inferred gate-output agreement. A DELAY or BLOCK example can pass CI because the record is well-formed and the expected gate result is correct.
 
-- JSON schema for the Minimal Completion Record
-- PASS / DELAY / BLOCK examples
-- human-readable checklist
-- lightweight validator
-- scope profiles
-- CI-based validation
+These checks validate structure and restart handles, not evidence truth, code correctness, or every proposed paper requirement. This is a minimal companion, not a complete self-evolving AI system. [Software release v2.2.3](https://github.com/shin4141/decision-os-v12-completion-integrity/releases/tag/v2.2.3) is independent of paper version `v2`.
 
-The artifact is not a full implementation of self-evolving AI.  
-Its purpose is to make the Completion Gate inspectable and reusable as an operational template.
+Continue to [V13 LoopKit and its validation limits](../../README.md#public-implementations-and-evidence) to inspect next-cycle decisions. A V12 PASS does not automatically mean V13 GO.
 
 ## Scope Boundary
 
@@ -84,4 +82,4 @@ Together, V10–V12 address how a future self avoids breaking under survival pre
 
 ## Release Notes
 
-This directory is intended to store the V12 manuscript, related notes, and release artifacts.
+This directory preserves V12 manuscripts. Use the version DOI above for paper citation and the implementation repository/commit for software claims. See the [publication timeline](../../docs/research_timeline.md) and [source verification record](../../docs/gateway_update_2026-09-13.md).

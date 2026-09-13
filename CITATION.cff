@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite the relevant Zenodo DOI (V5 or V8 v2)."
-title: "decision-os-paper (Decision-OS V4–V8 Gateway)"
+message: "Cite the relevant paper's version-specific Zenodo DOI from these references (V4–V14, addenda, and Value Dynamics notes). This file describes the research gateway; cite software separately by repository and version."
+title: "decision-os-paper (Decision-OS V4–V14 research gateway)"
 type: software
 authors:
   - family-names: "Nagata"
@@ -9,6 +9,7 @@ date-released: "2026-01-10"
 repository-code: "https://github.com/shin4141/decision-os-paper"
 url: "https://github.com/shin4141/decision-os-paper"
 license: "CC-BY-4.0"
+abstract: "Navigation and archival references for Decision-OS research. Paper version numbers, software versions, and the historical gateway release date are separate. Public deposits do not establish peer review or general empirical validation."
 keywords:
   - "Decision-OS"
   - "AI Safety"
@@ -19,8 +20,207 @@ keywords:
   - "Zero-knowledge"
   - "Time-Tube"
   - "PIC"
+  - "Reconnectable Forgetting"
+  - "Completion Integrity"
+  - "Compound Loop Governance"
+  - "Resource Justice"
 
+# Current reading editions, then the historical references previously listed here.
+# date-released above is preserved gateway metadata, not a publication date for these papers.
 references:
+  - type: report
+    title: "Decision-OS V4 Polaris-Origin: An Entry OS for Seeing Structure with AI"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.17905930"
+    url: "https://zenodo.org/records/17905930"
+    year: 2025
+    notes: "Public deposit; registered resource type: Text. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V5 Revised (SiriusA2): A Zero-Knowledge Confirmation Layer for Trajectory-Aware Human–AI Decision Safety"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.19828435"
+    url: "https://zenodo.org/records/19828435"
+    year: 2026
+    version: "V5 Revised (SiriusA2)"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V6 (PIC): Canonical Commitment for Non-Destructive Integration"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.19433866"
+    url: "https://zenodo.org/records/19433866"
+    year: 2026
+    version: "V4"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V7 Final: Guardable Self-Recursive Evolution"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.20422099"
+    url: "https://zenodo.org/records/20422099"
+    year: 2026
+    version: "V7 Final EN v1.0"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V8: Time-Tube Control for Self-Safe AGI"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.19690553"
+    url: "https://zenodo.org/records/19690553"
+    year: 2026
+    version: "v3"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V9.1: Impact-Weighted Release — From Continuous-Pass Gates to Condition-Bound Judgment Reuse"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.19935535"
+    url: "https://zenodo.org/records/19935535"
+    year: 2026
+    version: "v9.1"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V10: Recalculating Goal-Length Without Breaking the Carrier of Aspiration"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.20371623"
+    url: "https://zenodo.org/records/20371623"
+    year: 2026
+    version: "v2.0"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V11: Forget for Future — Reconnectable Forgetting for Long-Horizon Agentic AI"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.20301056"
+    url: "https://zenodo.org/records/20301056"
+    year: 2026
+    version: "v2.0"
+    notes: "Public deposit; registered resource type: Working paper. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V12: Completion Integrity"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.20370655"
+    url: "https://zenodo.org/records/20370655"
+    year: 2026
+    version: "v2"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V13 Research Note v0.2: Post-Optimization Survival Architecture — Compound Loop Governance for AI Operations"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.20634743"
+    url: "https://zenodo.org/records/20634743"
+    year: 2026
+    version: "v0.2"
+    notes: "Public deposit; registered resource type: Working paper. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V14 Research Note: Resource Justice at the Joint Layer"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.21148211"
+    url: "https://zenodo.org/records/21148211"
+    year: 2026
+    version: "v0.1"
+    notes: "Public deposit; registered resource type: Working paper. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS v4 Addendum: Grounded Decision Protocol (V5-compatible Guard)"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.18469000"
+    url: "https://zenodo.org/records/18469000"
+    year: 2026
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V5 Addendum — SiriusA Adoption Gate (0.3 Disclosure)"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.18252623"
+    url: "https://zenodo.org/records/18252623"
+    year: 2026
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V6 Addendum: Evaluation Hooks for PIC — Verification Note (1p)"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.18240015"
+    url: "https://zenodo.org/records/18240015"
+    year: 2026
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS V7 Addendum V2: Why Aspire, Why PIC"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.18896167"
+    url: "https://zenodo.org/records/18896167"
+    year: 2026
+    version: "v2"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS Note: Time-is-an-Ally V3 — Value as a Non-Decreasing Trajectory Under External Signals"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.19076241"
+    url: "https://zenodo.org/records/19076241"
+    year: 2026
+    version: "v3"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS Note: Genesis Selection"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.19157058"
+    url: "https://zenodo.org/records/19157058"
+    year: 2026
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
+  - type: report
+    title: "Decision-OS Series — Value Dynamics Part III: Settlement Conditions of Value"
+    authors:
+      - family-names: "Nagata"
+        given-names: "Shinichi"
+    doi: "10.5281/zenodo.20261794"
+    url: "https://zenodo.org/records/20261794"
+    year: 2026
+    version: "v1.0"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
+
   - type: report
     title: "Decision-OS V5 SiriusA: Zero-Knowledge Confirmation Layer for the Protection of Life"
     authors:
@@ -29,23 +229,27 @@ references:
     doi: "10.5281/zenodo.18051625"
     url: "https://zenodo.org/records/18051625"
     year: 2025
+    version: "v3"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
 
   - type: report
-    title: "Decision-OS V8 (v2): Time-Tube Control for Self-Safe AGI"
+    title: "Decision-OS V8: Time-Tube Control for Self-Safe AGI"
     authors:
       - family-names: "Nagata"
         given-names: "Shinichi"
     doi: "10.5281/zenodo.18137204"
     url: "https://zenodo.org/records/18137204"
     year: 2026
+    version: "v2"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."
 
   - type: report
-    title: "Decision-OS Note: Time-is-an-Ally v2"
+    title: "Decision-OS Note: Time-is-an-Ally (Genesis×Time)"
     authors:
       - family-names: "Nagata"
         given-names: "Shinichi"
     doi: "10.5281/zenodo.18211673"
-    url: "https://doi.org/10.5281/zenodo.18211673"
+    url: "https://zenodo.org/records/18211673"
     year: 2026
-
-
+    version: "v2"
+    notes: "Public deposit; registered resource type: Preprint. No peer-review outcome verified in the gateway audit."

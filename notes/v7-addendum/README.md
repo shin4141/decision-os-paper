@@ -28,9 +28,14 @@ Decision-OS V7 defines intelligence not only by capability, but by whether a sys
 
 This addendum isolates that logic and makes the necessity of Aspire and PIC explicit.
 
-## Included file
+## Publication and files
 
-- `Decision_OS_V7_Addendum_V2__Why_Aspire_Why_PIC.pdf`
+- Published preprint supplement, 2026-03-07; deposited version `v2`.
+- [Formal citation: DOI 18896167](https://doi.org/10.5281/zenodo.18896167).
+- [V2 PDF](Decision_OS_V7_Addendum_V2__Why_Aspire_Why_PIC.pdf); its header date is 2026-03-06, distinct from the registered publication date.
+- Earlier [0.3 Disclosure DOI 18220351](https://doi.org/10.5281/zenodo.18220351), 2026-01-12; [earlier PDF](Decision_OS_V7_Addendum_0p3_Why_Aspire_Why_PIC.pdf.pdf).
+
+This is a focused argument, not an empirical validation report. The registered supplement relation refers to the earlier V7; the [V7 Final guide](../v7-final/README.md) explains that paper's later failure-boundary framing. Return to the [series index](../../README.md#series-index-zenodo).
 
 ## Recommended reading order
 

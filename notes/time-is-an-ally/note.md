@@ -13,4 +13,6 @@ It is intended to detect changes in slope rather than waves in price, especially
 - Collapse resets the market regime, not the underlying accumulated value trajectory.
 
 Related note:
-- Zenodo: [Decision-OS Note: Time-is-an-Ally V3](10.5281/zenodo.19076241)
+- Zenodo: [Decision-OS Note: Time-is-an-Ally V3](https://doi.org/10.5281/zenodo.19076241)
+
+Publication: preprint, deposited `v3`, primary registered Issued date 2026-03-18 (the metadata also retains 2026-01-11). [Local V3 PDF](Decision_OS_Note_Time_is_an_Ally_V3.pdf). Earlier [v2](https://doi.org/10.5281/zenodo.18211673) and [v1](https://doi.org/10.5281/zenodo.18158755) remain version-specific citations. Continue to [Genesis Selection](../genesis-selection/README.md) and [Settlement Conditions](../settlement-conditions/README.md), or the [series index](../../README.md#addenda-and-value-dynamics-notes).
