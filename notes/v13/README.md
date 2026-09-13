@@ -1,62 +1,32 @@
 # Decision-OS V13 Research Notes
 
-## Overview
+V13 studies **Compound Loop Governance**: whether another AI-assisted iteration should run, wait, be capped, or stop, so that repetition improves the conditions for future work without damaging its Carrier (the people, resources, and recovery capacity needed to continue).
 
-This folder contains Decision-OS V13 research notes.
+## Published notes
 
-V13 studies **Compound Loop Governance**: how AI-assisted loops should be selected, capped, held, or blocked so that the next iteration becomes stronger without damaging the Carrier that must continue.
+- **Start with v0.2:** [Post-Optimization Survival Architecture — Compound Loop Governance for AI Operations](https://doi.org/10.5281/zenodo.20634743), working paper, 2026-06-11; [local PDF](Decision-OS_V13_Research_Note_v0.2.pdf).
+- **Earlier v0.1:** [Compound Loop — Selecting the Variable That Makes the Next Iteration 1.01](https://doi.org/10.5281/zenodo.20604577), working paper, 2026-06-09; [local PDF](Decision-OS_V13_Research_Note_v0.1.pdf).
 
-Core Canon:
+V0.2 remains a **Research Note / Canon Freeze / Prototype-Bound Draft**, even though it is publicly deposited. Its `IsNewVersionOf` relation points to v0.1; both belong to concept DOI `10.5281/zenodo.20604576`. A final v1.0 paper was not verified. The original “v1.0 after prototype feedback” direction is a plan, not a publication claim.
 
-> Capability without controllability is not intelligence.
+## Public implementation and results
 
-## Read This First
+[V13 LoopKit](https://github.com/shin4141/decision-os-v13-loopkit) is a separate operating prototype. Its current entry describes next-loop reporting, restartable handoffs, selective external-memory reuse, and a bounded local scanner. Start with the [English onboarding guide](https://github.com/shin4141/decision-os-v13-loopkit/blob/main/docs/external_intelligence_onboarding.md); no full-corpus read is needed.
 
-Start with:
+Use the gateway's [implementation and evidence table](../../README.md#public-implementations-and-evidence) for fixed-commit results: Forward Use 003/004, a three-repository scanner trial, local onboarding tests, and the Cycle 006 failure boundary. These include creator-owned observations, limited usefulness, and unestablished whole-flow behavior. They are not proof of the full V13 theory, independent certification, or model self-training.
 
-* `Decision-OS_V13_Research_Note_v0.2.pdf`
+[Software v0.1.0](https://github.com/shin4141/decision-os-v13-loopkit/releases/tag/v0.1.0) is the first operating prototype snapshot. Software main has evolved since that release; do not confuse it with research-note v0.1 or v0.2.
 
-v0.2 is the current Canon Freeze / Prototype-Bound Draft.
-
-v0.1 records the initial Compound Loop discovery.
-
-For the current prototype, see:
-
-* https://github.com/shin4141/decision-os-v13-loopkit
-
-## Files
-
-* `Decision-OS_V13_Research_Note_v0.1.pdf`
-  Initial research note defining **Compound Loop** as selecting the variable that makes the next iteration 1.01.
-
-* `Decision-OS_V13_Research_Note_v0.2.pdf`
-  Canon Freeze / Prototype-Bound Draft.
-  Defines V13 as a **Post-Optimization Survival Architecture** and introduces the minimal loop gate: **GO / HOLD / CAP / BLOCK**.
-
-## Version Flow
+## V12 → V13
 
 ```text
-v0.1 = discovery of Compound Loop
-v0.2 = Canon Freeze
-prototype = operating-surface discovery
-v1.0 = paper after prototype feedback
+V12 Completion Record: is the work restartable enough to close?
+        ↓
+V13 Loop Record: should the next cycle GO / HOLD / CAP / BLOCK?
+        ↓
+A bounded next action with explicit conditions
 ```
 
-## Prototype Direction
+V12 addresses false completion; V13 addresses unjustified or non-compounding repetition. The note's central canon is “Capability without controllability is not intelligence.” It is a research position, not evidence that all proposed mechanisms have been implemented.
 
-The immediate prototype direction is the **V12→V13 LoopKit**.
-
-```text
-V12 Completion Record
-        ↓
-V13 Loop Record
-        ↓
-GO / HOLD / CAP / BLOCK
-        ↓
-Next Loop Command
-```
-
-V12 prevents false completion.
-V13 prevents non-compounding repetition.
-
-Together, they form a minimal bridge from completed work to governed iteration.
+Continue to [V14](../v14/README.md) for burden and ownership across handoffs, or return to the [series index](../../README.md#series-index-zenodo).

@@ -1,8 +1,9 @@
 # Decision-OS V10: Survival-Bounded Planning
 ## Recalculating Goal-Length Without Breaking the Carrier of Aspiration
 
-V10 will not spread because it is first understood as theory.  
-It will spread when people feel the difference between AI that optimizes a goal and AI that protects the carrier of aspiration.
+V10 proposes rescaling goals while preserving the people, resources, and recovery capacity needed to continue. It is a conceptual planning framework; the prompts below are reflective examples, not validated predictions or a complete implemented planning system.
+
+**Full paper:** [DOI 20371623](https://doi.org/10.5281/zenodo.20371623), published preprint, 2026-05-25, deposited `v2.0`. The earlier short Note is a separate `v1.0` publication in the same V10 lineage; see below. Return to the [series index](../../README.md#series-index-zenodo).
 
 ---
 
@@ -40,9 +41,11 @@ V10 roadmaps check whether progress is still survivable.
 
 ## Files
 
-- Research Note: `Decision_OS_V10_Note_Survival_Bounded_Planning_V1.pdf`
-- Full Paper (EN): `Decision_OS_V10_Recalculating_Goal_Length_Without_Breaking_the_Carrier_of_Aspiration_EN.pdf`
-- Full Paper (JP): `Decision_OS_V10_Recalculating_Goal_Length_Without_Breaking_the_Carrier_of_Aspiration_JP.pdf`
+- Earlier Note: [local PDF](Decision_OS_V10_Note_Survival_Bounded_Planning_V1.pdf); [DOI 19871495](https://doi.org/10.5281/zenodo.19871495), *Decision-OS V10: Survival-Bounded Planning: Why Optimization Conflicts with Survival*, working paper, `v1.0`, 2026-04-29.
+- Full Paper (EN): [local PDF](Decision_OS_V10_Recalculating_Goal_Length_Without_Breaking_the_Carrier_of_Aspiration_EN_v1.pdf).
+- Full Paper (JP): [local PDF](Decision_OS_V10_Recalculating_Goal_Length_Without_Breaking_the_Carrier_of_Aspiration_JP_v1.pdf).
+
+The full-paper filenames retain `_v1`; the deposit is `v2.0`. Both DOI records belong to concept DOI `10.5281/zenodo.19871494`. Filename/subject matching is not a byte-identity check; see [verification limits](../../docs/gateway_update_2026-09-13.md).
 
 ---
 
@@ -202,4 +205,4 @@ Users remain responsible for their decisions. For high-stakes financial, legal, 
 
 Nagata, Shinichi. Decision-OS V10: Recalculating Goal-Length Without Breaking the Carrier of Aspiration — Aspiring SiriusA Intelligence. 2026.
 
-Zenodo DOI: [Add after publication]
+Zenodo version DOI: [10.5281/zenodo.20371623](https://doi.org/10.5281/zenodo.20371623), deposited `v2.0`.

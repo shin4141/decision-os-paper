@@ -1,29 +1,30 @@
-# Start here (30 seconds)
+# Start here
 
-## What this is
-Decision-OS V9 is an operational release protocol:
-**Time V2 / As-of fixation + forward-only deltas**, evaluated under public-pressure conditions.
+Decision-OS studies how human–AI decisions and work can remain controllable, auditable, and restartable over time. The [README](README.md) is the current research gateway through V14, with [paper citations](README.md#series-index-zenodo), [interest-based reading paths](README.md#start-here-gateway), and [public implementations and evidence](README.md#public-implementations-and-evidence).
 
-## See the outcome first
-Below is an example of the gate outcome as an auditable artifact:
-- **PASS / DELAY / BLOCK** (with evidence)
+## Choose one question
 
-➡ Example output:
-- `examples/decision_gate.sample.json`
+- **Can a later AI reconnect to prior work?** Start with [V11](notes/v11/README.md).
+- **Is work ready to be called complete?** Start with [V12](notes/v12/README.md), then its [software companion](https://github.com/shin4141/decision-os-v12-completion-integrity).
+- **Should the next cycle run, wait, be limited, or stop?** Start with [V13](notes/v13/README.md) and [LoopKit](https://github.com/shin4141/decision-os-v13-loopkit). Use [V10](notes/v10/README.md) when the goal needs rescaling.
+- **Can an irreversible action or public release proceed?** Start with the [V5 Adoption Gate](notes/v5-addendum/README.md), then [V9.1](notes/v9/README.md).
+- **Who inherits the burden when a handoff fails?** Start with [V14](notes/v14/README.md).
 
-## Reproduce it (optional, fork required)
-1) Fork this repo
-2) Actions → **Decision Gate (B-min penetration)** → Run workflow
-3) Choose a scenario (pass/delay/block/...) → run → download artifacts
+## For researchers and AI evaluators
 
-## If you want the supporting layer (optional)
-MMAR logs disagreement / structural signals as audit residue.
+Read only the selected paper and its dependencies first. Record:
 
-## Collaboration / licensing (bounded)
-- Open to licensing / local partnership (bounded scope).
-- Q&A is limited (one session); ongoing support requires an agreement.
-- Public use must include attribution (“Decision-OS / Shin”).
+1. The exact version DOI and whether it is a full paper, Note, or supplement.
+2. The claim, assumptions, dependencies, check type, and a possible falsifier.
+3. Whether the evidence is a proposal, a conditional theoretical result, a software check, or a bounded observation.
+4. For implementation claims, the source commit, tested input/domain, actual result, and what remains unverified.
 
-- ローカル出願/導入の相談は可能（範囲は限定）。
-- Q&Aは原則1回まで。継続支援は契約ベース。
-- 公開物にはクレジット（Decision-OS / Shin）明記。
+Public deposition is not peer review. A green CI run does not establish a whole theory, evidence truth, or general safety. The [verification record](docs/gateway_update_2026-09-13.md) explains how publication metadata was checked and which direct downloads remain unverified.
+
+## See a gate artifact
+
+The [README demo instructions](README.md#decision-gate-demo-actions) lead to `decision_gate.json` in an Actions artifact. This is a synthetic MMAR/L0 gate demo; it is not a sample output of every later paper. Downloads depend on sign-in and artifact retention.
+
+## Collaboration and reuse
+
+For bounded collaboration, contact **siriusa.paper@gmail.com**. Q&A and continuing support scope should be agreed separately. Attribute the relevant work to Shinichi Nagata and consult the [paper repository license](LICENSE); implementation repositories have their own licenses.

@@ -18,7 +18,7 @@ Intrinsic value alone does not guarantee settlement. A system settles only when 
 
 ## Artifact
 
-- PDF: `Decision_OS_Series___Value_Dynamics_Part_III__Settlement_Conditions_of_Value.pdf`
+- [Local PDF](Decision_OS_Series___Value_Dynamics_Part_III__Settlement_Conditions_of_Value.pdf)
 - SHA256: `82e49ef81ca28694463a4f39e63bfdf7c22eb1e1ed5dc0421f6666659e0941a8`
 
 ## Scope
@@ -27,4 +27,4 @@ Bitcoin and digital assets are used only as observation cases for settlement con
 
 ## Status
 
-Initial public release. Zenodo DOI will be added after publication.
+Published preprint, 2026-05-18, deposited `v1.0`: [DOI 20261794](https://doi.org/10.5281/zenodo.20261794). Publication does not establish peer review or empirical validation. See the [series index](../../README.md#addenda-and-value-dynamics-notes). The existing SHA256 above is preserved; identity with a fresh Zenodo download was not reverified.

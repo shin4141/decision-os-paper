@@ -1,8 +1,8 @@
 # Decision-OS V9.1 — Impact-Weighted Release
 
-This folder contains the finalized paper PDF(s) and locked figures for Decision-OS V9 / V9.1.
+This folder preserves the V9 / V9.1 manuscripts. Publication is not a claim of peer review or empirical validation of the release protocol. See the [series index](../../README.md#series-index-zenodo) and [implementation evidence](../../README.md#public-implementations-and-evidence).
 
-## Latest version
+## Current reading edition
 
 **Decision-OS V9.1: Impact-Weighted Release**  
 *From Continuous-Pass Gates to Condition-Bound Judgment Reuse*
@@ -16,9 +16,9 @@ The main additions are:
 - condition invalidation → DELAY
 - reusable gate states: `(outcome, residue_key, condition)`
 
-## Latest DOI (recommended)
+## Published editions
 
-- **V9.1:** DOI pending / to be added after Zenodo release
+- **V9.1:** [DOI 19935535](https://doi.org/10.5281/zenodo.19935535), published preprint, 2026-05-01; deposited version `v9.1`. The record explicitly declares `IsNewVersionOf` the v2 record below.
 - **v2 (Jan 27, 2026):** https://doi.org/10.5281/zenodo.18390432
 - **v1 (Jan 21, 2026):** https://doi.org/10.5281/zenodo.18321009
 
@@ -26,20 +26,13 @@ The main additions are:
 
 ### Paper (PDF)
 
-- `Decision__O_S_V9__1_1.pdf` — Decision-OS V9.1: Impact-Weighted Release
-- `Decision-OS_V9_Impact-Weighted_Release_v1_JP.pdf`
-- `Decision-OS_V9_Impact-Weighted_Release_v1_EN.pdf`
+- [V9.1 PDF](Decision__O_S_V9__1_1.pdf) — Decision-OS V9.1: Impact-Weighted Release
+- [V9 Japanese PDF](Decision-OS_V9_Impact-Weighted_Release_v1_JP.pdf), deposited `v1`.
+- [V9 English PDF](Decision-OS_V9_Impact-Weighted_Release_v1_EN.pdf), deposited `v2`; the local filename retains `v1`.
 
-### Figures (V9.1 final, locked)
+### Historical figure references
 
-- `fig/fig1_judgment_compression_pipeline.png` — Judgment Compression Pipeline under As-of review
-- `fig/fig2_release_gate_structure.png` — Release Gate Structure under Impact-Weighted Observation
-
-### Figures (V9 legacy)
-
-- `fig/Fig1_final_v9_v8_to_v9..jpg` — V8→V9 connection
-- `fig/Fig2_final_public_tube_union.jpg` — Public Tube `(p,n)`: cumulative risk and defense levers
-- `fig/Fig3_final_release_volume.jpg` — Impact-Weighted Release Volume
+The earlier guide listed `fig/fig1_judgment_compression_pipeline.png`, `fig/fig2_release_gate_structure.png`, and three V9 legacy images under `fig/`. Those paths are absent from this checkout; use the figures embedded in the paper PDFs. No files were moved or recreated.
 
 ## V9.1 summary
 
@@ -62,7 +55,7 @@ It is downshifted to DELAY and must be rechecked through DFR.
 
 Quick verification
 
-Open this folder at the lock commit below and compare the PDF + figures with the Zenodo record.
+Use the version DOI for citation. The old lock metadata below is preserved for historical inspection; it does not establish byte identity with the current V9.1 deposit. Direct Zenodo file comparison was not completed in this audit.
 
 Notes
 Figures are labeled in English for reuse across JP/EN versions.

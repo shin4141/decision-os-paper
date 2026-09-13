@@ -2,7 +2,12 @@
 
 **Reconnectable Forgetting for Long-Horizon Agentic AI**  
 Author: **Shinichi Nagata**  
-DOI: https://doi.org/10.5281/zenodo.20301056
+DOI: [10.5281/zenodo.20301056](https://doi.org/10.5281/zenodo.20301056)<br>
+**Publication:** full framework paper / working paper, 2026-05-20; deposited `v2.0`.
+
+The separate earlier Note, *Forget for Evolution: Reconnectable Forgetting for Agentic AI*, is [DOI 19872064](https://doi.org/10.5281/zenodo.19872064), `v1.0`, 2026-04-29. The full paper explicitly declares `IsNewVersionOf` that Note; both share concept DOI `10.5281/zenodo.19872063`.
+
+For operational examples and their limits, use the [V12/V13 implementation evidence](../../README.md#public-implementations-and-evidence). Those bounded records do not establish empirical validation of the complete V11 memory architecture.
 
 ## One-line thesis
 
@@ -155,7 +160,9 @@ In short:
   author = {Shinichi Nagata},
   title  = {Decision-OS V11: Forget for Future -- Reconnectable Forgetting for Long-Horizon Agentic AI},
   year   = {2026},
-  note   = {Decision-OS research sequence}
+  doi    = {10.5281/zenodo.20301056},
+  version = {v2.0},
+  note   = {Working paper; conceptual and operational framework}
 }
 ```
 
