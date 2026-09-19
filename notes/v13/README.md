@@ -1,11 +1,17 @@
 # Decision-OS V13 Research Notes
 
+## Current paper and supplement
+
+- **日本語PDF:** [Decision-OS V13 — 人間のAspireから、仕事が続くAIループへ](Decision-OS_V13_From_Human_Aspiration_to_Working_AI_Loops_JP.pdf)
+- **English PDF:** [Decision-OS V13 — From Human Aspiration to Working AI Loops](Decision-OS_V13_From_Human_Aspiration_to_Working_AI_Loops_EN.pdf)
+- **Supplement:** [Decision-OS_V13_Supplement.zip](Decision-OS_V13_Supplement.zip) — 付録A：公開PR一覧・集計データ・再計算スクリプト
+
 V13 studies **Compound Loop Governance**: whether another AI-assisted iteration should run, wait, be capped, or stop, so that repetition improves the conditions for future work without damaging its Carrier (the people, resources, and recovery capacity needed to continue).
 
-## Published notes
+## Previous research-note versions
 
-- **Start with v0.2:** [Post-Optimization Survival Architecture — Compound Loop Governance for AI Operations](https://doi.org/10.5281/zenodo.20634743), working paper, 2026-06-11; [local PDF](Decision-OS_V13_Research_Note_v0.2.pdf).
-- **Earlier v0.1:** [Compound Loop — Selecting the Variable That Makes the Next Iteration 1.01](https://doi.org/10.5281/zenodo.20604577), working paper, 2026-06-09; [local PDF](Decision-OS_V13_Research_Note_v0.1.pdf).
+- **v0.2（旧版）:** [Post-Optimization Survival Architecture — Compound Loop Governance for AI Operations](https://doi.org/10.5281/zenodo.20634743), working paper, 2026-06-11; [local PDF](Decision-OS_V13_Research_Note_v0.2.pdf).
+- **v0.1（旧版）:** [Compound Loop — Selecting the Variable That Makes the Next Iteration 1.01](https://doi.org/10.5281/zenodo.20604577), working paper, 2026-06-09; [local PDF](Decision-OS_V13_Research_Note_v0.1.pdf).
 
 V0.2 remains a **Research Note / Canon Freeze / Prototype-Bound Draft**, even though it is publicly deposited. Its `IsNewVersionOf` relation points to v0.1; both belong to concept DOI `10.5281/zenodo.20604576`. A final v1.0 paper was not verified. The original “v1.0 after prototype feedback” direction is a plan, not a publication claim.
 
